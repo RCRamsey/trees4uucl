@@ -1,0 +1,213 @@
+Zone,Tree ID #,Lat.,Long.,Map,Common Name,Botanical Name,Circum.,,DBH,Structure,Health,Planted By,Date,Hazard/Safety,Maintenance,Perf. By,Date,Notes
+1. Memorial Garden,1,37.988411011174321,-84.559576967731118,,apple,Malus spp.,"2' 9""",33.0,10.50,Moderate,Moderate,,,dead limbs over AC units,remove dead limbs,,,green apples
+1. Memorial Garden,2,37.988400030881166,-84.559642011299729,,hackberry,Celtis occidentalis,"6' 4""",76.0,24.19,Moderate,Moderate,,,,,,,
+1. Memorial Garden,3,37.988331969827414,-84.559648968279362,,tulip poplar,Liriodendron tulipifera,"7' 4"" ",88.0,28.01,Moderate,Moderate,,,,,,,
+1. Memorial Garden,4,37.988204983994365,-84.559750976040959,,apple,Malus domestica,"3' 9.5""",45.5,14.48,Poor,Declining,,,,remove dead limbs,,,
+1. Memorial Garden,5,37.988163996487856,-84.559818031266332,,white pine,Pinus strobus,"4' 9""",57.0,18.14,Poor,Moderate,,,,,,,has been cut for clearance along overhead utilities
+1. Memorial Garden,6,37.988163996487856,-84.559633964672685,,black walnut,Juglans nigra,"3' 7""",43.0,13.69,Poor,Moderate,,,,remove adjoining mulberry and hackberry,,,has been cut for clearance along overhead utilities
+1. Memorial Garden,7,37.988170031458139,-84.559490969404578,,American elm,Ulmus americana,"2' 5.5""",29.5,9.39,Poor,Good,,,,prune to reduce growth to overhead utilities,,,
+1. Memorial Garden,8,37.988140024244785,-84.559391979128122,,dead,,-,-,,Poor,Dead,,,standing dead,cut down,,,
+1. Memorial Garden,9,37.98804497346282,-84.559459034353495,,black walnut,Juglans nigra,"4' 0""",48.0,15.28,Moderate,Moderate,,,,remove wire at base,,,
+1. Memorial Garden,10,37.988042961806059,-84.559509996324778,,elderberry patch,Sambucus canadensis,-,-,,Moderate,Good,,,,remove invasive weeds,,,
+1. Memorial Garden,11,37.987995017319918,-84.559289971366525,,northern red oak,Quercus rubra,"9' 11""",119.0,37.88,Moderate,Declining,,,,watch for falling dead branches,,,
+1. Memorial Garden,12,37.988073974847794,-84.559245966374874,,yellowwood,Cladrastis kentukea,"2' 8""",32.0,10.19,Moderate,Good,,,,monitor,,,shoots at base of tree may be responding to strees or newly available sunlight
+1. Memorial Garden,13,37.988000968471169,-84.559105988591909,,Norway maple,Acer platanoides,"7' 9.5""",93.5,29.76,Good,Good,,,,,,,
+1. Memorial Garden,14,37.987912036478519,-84.559068018570542,,sugar maple,Acer saccharum,"6' 9""",81.0,25.78,Moderate,Declining,,,decay on trunk,monitor,,,wounds and decay on S & SE sides of trunk
+1. Memorial Garden,15,37.987854033708572,-84.559131972491741,,sugar maple,Acer saccharum,"4' 8.5""",56.5,17.98,Moderate,Declining,,,decay on trunk,monitor,,,"wounds and decay on trunk, acute branching angles"
+1. Memorial Garden,16,37.987842969596386,-84.559097019955516,,sugar maple,Acer saccharum,"5' 4.5""",64.5,20.53,Moderate,Moderate,,,,monitor,,,black sooty mold on trunk
+1. Memorial Garden,17,37.987883035093546,-84.558922005817294,,hackberry,Celtis occidentalis,"6' 5""",77.0,24.51,Moderate,Moderate,,,,,,,
+1. Memorial Garden,18,37.987960986793041,-84.558968022465706,,white mulberry,Morus alba,"3' 4""",40.0,12.73,Moderate,Moderate,,,,,,,
+1. Memorial Garden,19,37.987999962642789,-84.558880012482405,,loblolly pine,Pinus taeda,"6' 5""",77.0,24.51,Moderate,Moderate,,,,,,,
+1. Memorial Garden,20,37.98804203979671,-84.558867020532489,,hackberry,Celtis occidentalis,"3' 4""",40.0,12.73,Moderate,Moderate,,,,,,,
+1. Memorial Garden,21,37.988039022311568,-84.558868026360869,,hackberry,Celtis occidentalis,"3' 9""",45.0,14.32,Moderate,Moderate,,,,,,,
+1. Memorial Garden,22,37.988081015646458,-84.558853022754192,,hackberry,Celtis occidentalis,"2' 0""",24.0,7.64,Poor,Moderate,,,,remove branches rubbing against pine and growing towards overhead utilities,,,
+1. Memorial Garden,23,37.988076992332935,-84.558814968913794,,loblolly pine,Pinus taeda,"5' 2.5""",62.5,19.89,Moderate,Declining,,,,,,,hackberry branches are rubbing against bark
+1. Memorial Garden,24,37.98812803812325,-84.559070030227304,,red maple,Acer rubra,"7' 5""",89.0,28.33,Moderate,Declining,,,,monitor,,,black sooty mold and fungus
+2. Woods,25,37.989124981686473,-84.559749970212579,,hackberry,Celtis occidentalis,"3' 5""",41.0,13.05,Moderate,Moderate,,,,,,,intertwined with black cherry
+2. Woods,26,37.989124981686473,-84.559749970212579,,black cherry,Prunus serotina,"3' 9""",45.0,14.32,Moderate,Moderate,,,,,,,intertwined with hackbery
+2. Woods,27,37.989090029150248,-84.559742007404566,,black cherry,Prunus serotina,"5' 0""",60.0,19.10,Moderate,Moderate,,,,,,,
+2. Woods,28,37.989080976694822,-84.559896988794208,,sweet gum,Liquidambar styraciflua,"4' 9""",57.0,18.14,Moderate,Moderate,,,,,,,
+2. Woods,29,37.989060021936893,-84.559957003220916,,northern red oak,Quercus rubra,"7' 8""",92.0,29.28,Moderate,Moderate,,,,,,,
+2. Woods,30,37.989194970577955,-84.559940993785858,,dead,,-,-,,Poor,Dead,,,dead tree along trail,cut down,,,
+2. Woods,31,37.989203017205,-84.560018023476005,,hemlock,Tsuga canadensis,"3' 0""",36.0,11.46,Moderate,Moderate,,,,,,,
+2. Woods,32,37.989287003874779,-84.559852983802557,,white oak,Quercus alba,"4' 10""",58.0,18.46,Moderate,Moderate,,,,,,,
+2. Woods,33,37.98926898278296,-84.559714011847973,,white oak,Quercus alba,"5' 4.5""",64.5,20.53,Moderate,Moderate,,,,,,,
+2. Woods,34,37.989250961691141,-84.559637987986207,,northern red oak,Quercus rubra,"6' 11""",83.0,26.42,Moderate,Moderate,,,,,,,
+2. Woods,35,37.989307036623359,-84.559831023216248,,northern red oak,Quercus rubra,"5' 7.5""",67.5,21.49,Moderate,Moderate,,,,,,,
+2. Woods,36,37.989340983331203,-84.559782994911075,,northern red oak,Quercus rubra,"4' 7.5""",55.5,17.67,Moderate,Moderate,,,,,,,
+2. Woods,37,37.989389011636376,-84.559860024601221,,black locust,Robinia pseudoacacia,"8' 1""",97.0,30.88,Poor,Declining,,,,monitor,,,"significant lean, split co-dominate leads"
+2. Woods,38,37.989350035786629,-84.559874022379518,,black locust,Robinia pseudoacacia,"7' 1""",85.0,27.06,Moderate,Moderate,,,,,,,
+2. Woods,39,37.989439973607659,-84.559746030718088,,black locust,Robinia pseudoacacia,"3' 0""",36.0,11.46,Moderate,Moderate,,,,,,,
+2. Woods,40,37.989466041326523,-84.559806967154145,,black locust,Robinia pseudoacacia,"4' 2.5""",50.5,16.07,Moderate,Moderate,,,,,,,
+2. Woods,41,37.989501999691129,-84.559872010722756,,black locust,Robinia pseudoacacia,"3' 5""",41.0,13.05,Moderate,Moderate,,,,,,,
+2. Woods,42,37.989447014406323,-84.559909980744123,,white pine,Pinus strobus,"4' 10""",58.0,18.46,Poor,Moderate,,,,,,,"missing central trunk 1/2 way up, 2 co-dominate leads"
+2. Woods,43,37.989393034949899,-84.559932025149465,,white pine,Pinus strobus,"5' 3.5""",63.5,20.21,Moderate,Moderate,,,,,,,
+2. Woods,44,37.989408960565925,-84.559949040412903,,white pine,Pinus strobus,"4' 9""",57.0,18.14,Moderate,Moderate,,,,,,,
+2. Woods,45,37.989279041066766,-84.560045013204217,,white pine,Pinus strobus,"5' 4""",64.0,20.37,Moderate,Moderate,,,,,,,
+2. Woods,46,37.989304019138217,-84.560164958238602,,white pine,Pinus strobus,"6' 0""",72.0,22.92,Moderate,Moderate,,,,,,,
+2. Woods,47,37.989299995824695,-84.56018297933042,,elderberry patch,Sambucus canadensis,-,-,,Moderate,Moderate,,,,remove wintercreeper and bush honeysuckle,,,approx. 8' x 10'
+2. Woods,48,37.989245010539889,-84.560188008472323,,paw paw patch,Asimina triloba,-,-,,Moderate,Moderate,,,,remove wintercreeper and bush honeysuckle,,,approx. 8' x 10'
+2. Woods,49,37.989255990833044,-84.560077032074332,,white pine,Pinus strobus,"3' 6""",42.0,13.37,Moderate,Moderate,,,,,,,
+2. Woods,50,37.989208968356252,-84.560063034296036,,black cherry,Prunus serotina,"4' 2""",50.0,15.92,Moderate,Moderate,,,,,,,at spring box
+2. Woods,51,37.989209974184632,-84.560164036229253,,hackberry,Celtis occidentalis,"5' 1""",61.0,19.42,Moderate,Moderate,,,,,,,
+2. Woods,52,37.989161023870111,-84.560108967125416,,thornless honeylocust,Gleditsia triacanthos f. inermis,"4' 4""",52.0,16.55,Poor,Declining,,,dead branches over trail,monitor; remove dead branches over trail,,,"sloughing bark, appearance of borer beetle damage to exposed cambium"
+2. Woods,53,37.989135039970279,-84.560193959623575,,hackberry,Celtis occidentalis,"3' 9""",45.0,14.32,Poor,Moderate,,,,monitor,,,unique structure 
+2. Woods,54,37.989152977243066,-84.560168981552124,,hackberry,Celtis occidentalis,"3' 6""",42.0,13.37,Moderate,Moderate,,,,,,,
+2. Woods,55,37.989059016108513,-84.560137968510389,,black walnut,Juglans nigra,"5' 1""",61.0,19.42,Moderate,Moderate,,,,,,,one cluster of mistletoe
+2. Woods,56,37.989079970866442,-84.560079965740442,,black walnut,Juglans nigra,"4' 3.5""",51.5,16.39,Moderate,Moderate,,,,,,,
+2. Woods,57,37.989038983359933,-84.560034032911062,,northern red oak,Quercus rubra,"7' 11""",95.0,30.24,Moderate,Moderate,,,,,,,
+2. Woods,58,37.988986009731889,-84.560150038450956,,KY coffee tree,Gymnocladus dioicus,"5' 1.5""",61.5,19.58,Moderate,Moderate,,,,monitor,,,"healing over missing limb, some rot in wound at base"
+2. Woods,59,37.989020040258765,-84.560208963230252,,black walnut,Juglans nigra,"4' 3""",51.0,16.23,Moderate,Moderate,,,,,,,
+2. Woods,60,37.989122970029712,-84.560335027053952,,hackberry,Celtis occidentalis,"2' 10.5""",34.5,10.98,Moderate,Moderate,,,,,,,
+2. Woods,61,37.989082988351583,-84.560401998460293,,hackberry,Celtis occidentalis,"3' 1""",37.0,11.78,Moderate,Moderate,,,,remove small adjoining hackberry growing into it,,,
+2. Woods,62,37.989045018330216,-84.560306025668979,,hackberry,Celtis occidentalis,"2' 11""",35.0,11.14,Moderate,Moderate,,,,cut grape vines,,,
+2. Woods,63,37.989051975309849,-84.560467964038253,,hemlock,Tsuga canadensis,"3' 4""",40.0,12.73,Moderate,Moderate,,,,,,,
+2. Woods,64,37.989012999460101,-84.560410967096686,,white pine,Pinus strobus,"5' 3""",63.0,20.05,Moderate,Declining,,,,cut grape vines,,,
+2. Woods,65,37.989003024995327,-84.560433011502028,,white pine,Pinus strobus,"4' 1""",49.0,15.60,Moderate,Declining,,,,,,,
+2. Woods,66,37.988977963104844,-84.560521021485329,,white pine,Pinus strobus,"3' 11""",47.0,14.96,Moderate,Moderate,,,,,,,
+2. Woods,67,37.988930018618703,-84.560497971251607,,thornless honeylocust,Gleditsia triacanthos f. inermis,"5' 11""",71.0,22.60,Moderate,Good,,,,,,,
+2. Woods,68,37.988982992246747,-84.560581035912037,,sycamore,Platanus occidentalis,"6' 5""",77.0,24.51,Moderate,Good,,,,,,,
+2. Woods,69,37.988953990861773,-84.560666028410196,,sycamore,Platanus occidentalis,"4' 1""",49.0,15.60,Moderate,Good,,,,,,,triple trunks
+2. Woods,70,37.988934963941574,-84.560592016205192,,hackberry,Celtis occidentalis,"3' 4.5""",40.5,12.89,Moderate,Moderate,,,,cut grape vines,,,
+2. Woods,71,37.988824993371964,-84.5606520306319,,yellow buckeye,Aesculus octandra,"5' 1""",61.0,19.42,Moderate,Moderate,,,,,,,
+2. Woods,72,37.988878972828388,-84.56071799620986,,white pine,Pinus strobus,"5' 0""",60.0,19.10,Moderate,Declining,,,,,,,
+2. Woods,73,37.988890036940575,-84.560716990381479,,hackberry,Celtis occidentalis,"3' 0""",36.0,11.46,Moderate,Moderate,,,,,,,
+2. Woods,74,37.988807978108525,-84.560734005644917,,white pine,Pinus strobus,-,-,,Poor,Dead,,,dead limbs over trail,cut down,,,
+2. Woods,75,37.988742012530565,-84.560854034498334,,sycamore,Platanus occidentalis,"8' 4""",100.0,31.83,Moderate,Good,,,,,,,
+2. Woods,76,37.988700019195676,-84.560740040615201,,hackberry,Celtis occidentalis,"3' 5""",41.0,13.05,Moderate,Moderate,,,,,,,
+2. Woods,77,37.988761039450765,-84.560665022581816,,sycamore,Platanus occidentalis,"4' 6""",54.0,17.19,Moderate,Moderate,,,,,,,
+2. Woods,78,37.988734971731901,-84.560641972348094,,black walnut,Juglans nigra,"3' 2""",38.0,12.10,Moderate,Moderate,,,,,,,
+2. Woods,79,37.988698007538915,-84.560683965682983,,hackberry,Celtis occidentalis,"3' 4.5""",40.5,12.89,Moderate,Moderate,,,,,,,
+2. Woods,80,37.988713011145592,-84.560672985389829,,wahoo,Euonymus atropurpureus,-,-,1.00,Moderate,Moderate,,,,,,,https://plants.ces.ncsu.edu/plants/euonymus-atropurpureus/
+2. Woods,81,37.988632963970304,-84.560507023707032,,hackberry,Celtis occidentalis,"4' 4""",52.0,16.55,Moderate,Moderate,,,,,,,
+2. Woods,82,37.988584013655782,-84.56048397347331,,black cherry,Prunus serotina,"4' 7""",55.0,17.51,Moderate,Moderate,,,,,,,
+2. Woods,83,37.988660037517548,-84.560495037585497,,white pine,Pinus strobus,"4' 6""",54.0,17.19,Moderate,Moderate,,,,,,,
+2. Woods,84,37.98864402808249,-84.560405015945435,,white pine,Pinus strobus,"4' 2""",50.0,15.92,Moderate,Moderate,,,,,,,
+2. Woods,85,37.988627012819052,-84.560407027602196,,hackberry,Celtis occidentalis,"2' 10.5""",34.5,10.98,Moderate,Moderate,,,,,,,growing into / through pine canopy
+2. Woods,86,37.988566998392344,-84.560365034267306,,white pine,Pinus strobus,"3' 9.5""",45.5,14.48,Moderate,Moderate,,,,,,,growing into / through pine canopy
+2. Woods,87,37.988573033362627,-84.560442985966802,,hemlock,Tsuga canadensis,"2' 7""",31.0,9.87,Moderate,Moderate,,,,,,,growing into / through pine canopy
+2. Woods,88,37.988721979781985,-84.560470981523395,,hackberry,Celtis occidentalis,"3' 2.5""",38.5,17.67,Moderate,Moderate,,,,cut grape vines,,,
+2. Woods,89,37.988820970058441,-84.560443991795182,,black walnut,Juglans nigra,"4' 7.5""",55.5,17.67,Moderate,Moderate,,,,,,,
+2. Woods,90,37.988868998363614,-84.560365034267306,,white oak,Quercus alba,"5' 7""",67.0,21.33,Moderate,Moderate,,,,,,,
+2. Woods,91,37.988744024187326,-84.560254979878664,,oak sp?,Quercus,"4' 7""",55.0,17.51,Moderate,Declining,,,,monitor health,,,
+2. Woods,92,37.988837985321879,-84.560217009857297,,persimmon,Diospyros virginiana,"2' 1.5""",25.5,8.12,Moderate,Moderate,,,,,,,
+2. Woods,93,37.9887730255723,-84.5600959751755,,black cherry,Prunus serotina,"3' 10""",46.0,14.64,Moderate,Moderate,,,,,,,
+2. Woods,94,37.988764978945255,-84.560038978233933,,oak sp?,Quercus,"2' 11""",35.0,11.14,Moderate,Moderate,,,,,,,
+2. Woods,95,37.988817030563951,-84.560041995719075,,black cherry,Prunus serotina,"2' 8""",32.0,10.19,Moderate,Moderate,,,,,,,cluster
+2. Woods,96,37.988820970058441,-84.560016011819243,,black cherry,Prunus serotina,"3' 5.5""",41.5,13.21,Moderate,Moderate,,,,,,,
+2. Woods,97,37.988792974501848,-84.560033027082682,,black locust,Robinia pseudoacacia,"2' 8""",32.0,10.19,Moderate,Moderate,,,,,,,
+2. Woods,98,37.988801021128893,-84.560025986284018,,black locust,Robinia pseudoacacia,"3' 0""",36.0,11.46,Moderate,Moderate,,,,,,,
+2. Woods,99,37.988877967000008,-84.559978041797876,,black locust,Robinia pseudoacacia,-,-,,Poor,Declining,,,leaning to fence and play area,cut down,,,"leaning on other trees, decay on base, hazard to new fence/trail/play area"
+2. Woods,100,37.988951979205012,-84.560296973213553,,yellow buckeye,Aesculus octandra,"5' 2.5""",62.5,19.89,Moderate,Moderate,,,,,,,
+2. Woods,101,37.988932030275464,-84.560187002643943,,bur oak,Quercus macrocarpa,"4' 9""",57.0,18.14,Moderate,Moderate,,,,cut grape vines,,,
+2. Woods,102,37.988989027217031,-84.56018297933042,,black walnut,Juglans nigra,"2' 5""",29.0,9.23,Moderate,Moderate,,,,cut grape vines,,,
+2. Woods,103,37.988916020840406,-84.560006037354469,,hackberry,Celtis occidentalis,"3' 9""",45.0,14.32,Moderate,Moderate,,,,,,,
+2. Woods,NA,37.988701025024056,-84.560584975406528,,hackberry,Celtis occidentalis,-,-,,Poor,Dead,,,dead tree over trail,cut down tree,,,
+2. Woods,NA,37.988594993948936,-84.560471987351775,,,,,,,,,,,old fencing,remove wire and posts,,,
+3. Front Lawn,104,37.9888900369405,-84.5607169903814,,Norway spruce,Picea abies,"1' 10""",22.0,7.00,Moderate,Moderate,,,,,,,
+3. Front Lawn,105,37.9888079781085,-84.5607340056449,,mulberry sp?,Morus,"7' 1""",85.0,27.06,Poor,Declining,,,parking underneath,"monitor, remove dead limbs",,,"damaged roots, decay on limbs and large open wounds"
+3. Front Lawn,106,37.9887420125305,-84.5608540344983,,KY coffee tree,Gymnocladus dioicus,"5' 0""",60.0,19.10,Good,Good,,,,,,,
+3. Front Lawn,107,37.9887000191956,-84.5607400406152,,Loebner magnolia,Magnolia loebneri,"5' 10""",70.0,22.28,Moderate,Moderate,,,,prune crossing/rubbing limbs,,,some limbs missing from canopy
+3. Front Lawn,108,37.9887610394507,-84.5606650225818,,red maple,Acer rubrum,"2' 0.5""",24.5,7.80,Moderate,Moderate,,,,prune crossing/rubbing limbs,,,
+3. Front Lawn,109,37.9887349717319,-84.5606419723480,,apple,Malus domestica,-,-,,Poor,Dead,,,sidewalk,"monitor, remove dead material",,,appears mostly dead
+3. Front Lawn,110,37.9886980075389,-84.5606839656829,,beech,Fagus grandifolia,"8' 2""",98.0,31.19,Moderate,Moderate,,,,"prune crossing/rubbing/inward limbs, mulch exposed roots/soil",,,
+3. Front Lawn,111,37.9881400242447,-84.5593919791281,,apple,Malus domestica,"2' 7""",31.0,9.87,Moderate,Moderate,,,,,,,
+3. Front Lawn,112,37.9887130111455,-84.5606729853898,,apple,Malus domestica,-,-,,Poor,Declining,,,,"monitor, remove dead material",,,appears mostly dead
+3. Front Lawn,113,37.9886329639703,-84.5605070237070,,yellow buckeye,Aesculus octandra,"3' 11""",47.0,14.96,Moderate,Moderate,,,,prune dead lower branches,,,
+3. Front Lawn,114,37.9885840136557,-84.5604839734733,,English walnut,Juglans regia,"4' 9""",57.0,18.14,Moderate,Good,,,,,,,
+3. Front Lawn,115a,37.9886600375175,-84.5604950375854,,Chinese? chestnut,Castanea mollissima,"2' 4""",28.0,8.91,Moderate,Moderate,,,,prune dead/damaged branches,,,twin trunks
+3. Front Lawn,115b,,,,,,"2' 8""",32.0,10.19,Moderate,Moderate,,,,,,,
+3. Front Lawn,116,37.9886440280824,-84.5604050159454,,Shumard oak,Quercus shumardi,"7' 3""",87.0,27.69,Moderate,Good,,,,"mulch over roots, prune dead branches",,,"some damaged roots, one high hanging branch"
+3. Front Lawn,117,37.9886270128190,-84.5604070276021,,ash sp?,Fraxinus,"5' 2""",62.0,19.74,Moderate,Moderate,,,,"monitor for EAB, treatements",,,"twin trunks, no appearant signs of EAB"
+3. Front Lawn,118,37.9885669983923,-84.5603650342673,,apple,Malus domestica,"2' 5""",29.0,9.23,Poor,Declining,,,,"monitor, remove dead material",,,appears mostly dead
+3. Front Lawn,119,37.9885730333626,-84.5604429859668,,white oak,Quercus alba,"8' 7""",103.0,32.79,Moderate,Moderate,,,,"monitor, remove dead material, prune rubbing/crossing branches?",,,
+3. Front Lawn,120a,37.9887219797819,-84.5604709815233,,crab apple,Malus spp.,"2' 4""",28.0,8.91,Moderate,Moderate,,,,,,,triple trunk
+3. Front Lawn,120b,,,,,,"2' 1""",25.0,7.96,Moderate,Moderate,,,,,,,
+3. Front Lawn,120c,,,,,,"2' 11""",35.0,11.14,Moderate,Moderate,,,,,,,
+3. Front Lawn,121,37.9888209700584,-84.5604439917951,,apple,Malus domestica,"3' 2""",38.0,12.10,Moderate,Moderate,,,,,,,
+3. Front Lawn,122,37.9880449734628,-84.5594590343534,,pin oak,Quercus palustrus,"7' 0""",84.0,26.74,Moderate,Declining,,,,"monitor, remove dead material",,,"decay and fungus, smaller lead trunk looks dead"
+3. Front Lawn,123,37.9888689983636,-84.5603650342673,,bur oak,Quercus macrocarpa,"8' 6.5""",102.5,32.63,Good,Good,,,parking,"monitor, remove dead material",,,
+3. Front Lawn,124,37.9887440241873,-84.5602549798786,,beech,Fagus grandifolia,"4' 8""",56.0,17.83,Poor,Moderate,,,,"replace brocken metal cable branch support, prune crossing/rubbing branches, remove dead material, monitor, mulch over exposed/damaged roots",,,"major branch on south side with damaged cable support, damaged/exposed roots in ditch"
+3. Front Lawn,125,37.9888379853218,-84.5602170098572,,tullip poplar,Liriodendron tulipifera,"7' 1""",85.0,27.06,Moderate,Moderate,,,,,,,
+3. Front Lawn,126,37.9887730255723,-84.5600959751755,,ash sp?,Fraxinus,"6' 2""",74.0,23.55,Moderate,Moderate,,,,"monitor for EAB, treatements",,,no appearant signs of EAB
+3. Front Lawn,127,37.9887649789452,-84.5600389782339,,English walnut,Juglans regia,"2' 9""",33.0,10.50,Moderate,Moderate,,,,,,,
+3. Front Lawn,128,37.9888170305639,-84.5600419957190,,black walnut,Juglans nigra,"5' 11""",71.0,22.60,Moderate,Moderate,,,,,,,
+3. Front Lawn,129,37.9888209700584,-84.5600160118192,,black walnut,Juglans nigra,"5' 1.5""",61.5,19.58,Moderate,Moderate,,,,,,,
+3. Front Lawn,130,37.9887929745018,-84.5600330270826,,bur oak,Quercus macrocarpa,"5' 11""",71.0,22.60,Moderate,Moderate,,,,,,,
+3. Front Lawn,131,37.9888010211288,-84.5600259862840,,black walnut,Juglans nigra,"4' 1.5""",49.5,15.76,Moderate,Moderate,,,,,,,
+3. Front Lawn,132,37.9888779670000,-84.5599780417978,,black walnut,Juglans nigra,"4' 1""",49.0,15.60,Moderate,Moderate,,,,,,,
+3. Front Lawn,207,37.9889330361038,-84.5592580363154,,yellow buckeye,Aesculus flava,"10' 10""",130.0,41.38,Good,Good,,,,,,,
+3. Front Lawn,133,37.9890519753098,-84.5593179669231,,bur oak,Quercus macrocarpa,,,,,,,fall 2019,,,,,Trees Lexington! pocket nursery donation
+3. Front Lawn,134,37.9890229739248,-84.5594509877264,,red oak,Quercus rubra,,,,,,,fall 2019,,,,,Trees Lexington! pocket nursery donation
+3. Front Lawn,135,37.9890590161085,-84.5596219785511,,white oak,Quercus alba,,,,,,,fall 2019,,,,,Trees Lexington! pocket nursery donation
+2. Woods,136,37.9890059586614,-84.5597610343247,,serviceberry,Amelanchier canadensis,,,,,,,"May, 2020",,,,,Reforest The Bluegrass @ Home donation
+2. Woods,137,37.9890399891883,-84.5597600284963,,serviceberry,Amelanchier canadensis,,,,,,,"May, 2020",,,,,Reforest The Bluegrass @ Home donation
+2. Woods,138,37.9891450144350,-84.5597460307180,,hazelnut,Corylus americana,,,,,,,"May, 2020",,,,,Reforest The Bluegrass @ Home donation
+2. Woods,139,37.9892190266400,-84.5598020218312,,hazelnut,Corylus americana,,,,,,,"May, 2020",,,,,Reforest The Bluegrass @ Home donation
+2. Woods,140,37.9892150033265,-84.5597180351614,,serviceberry,Amelanchier canadensis,,,,,,,"May, 2020",,,,,Reforest The Bluegrass @ Home donation
+2. Woods,141,37.9892139974981,-84.5596199668943,,serviceberry,Amelanchier canadensis,,,,,,,"May, 2020",,,,,Reforest The Bluegrass @ Home donation
+2. Woods,142,37.9892509616911,-84.5596949849277,,spicebush,Lindera benzoin,,,,,,,2018,,,,,
+2. Woods,143,37.9892569966614,-84.5596750359982,,spicebush,Lindera benzoin,,,,,,,2018,,,,,
+2. Woods,144,37.9894109722226,-84.5596949849277,,wild plum,Prunus americana,,,,,,,"April, 2021",,,,,Dropseed Nursery
+2. Woods,145,37.9893709905445,-84.5597779657691,,wild plum,Prunus americana,,,,,,,"April, 2021",,,,,Dropseed Nursery
+2. Woods,146,37.9895330127328,-84.5597750321030,,serviceberry,Amelanchier canadensis,,,,,,,"May, 2020",,,,,Reforest The Bluegrass @ Home donation
+2. Woods,147,37.9895009938627,-84.5597460307180,,serviceberry,Amelanchier canadensis,,,,,,,"May, 2020",,,,,Reforest The Bluegrass @ Home donation
+3. Front Lawn,148,37.9894719924777,-84.5594870299100,,serviceberry,Amelanchier canadensis,,,,,,,"May, 2020",,,,,Reforest The Bluegrass @ Home donation
+3. Front Lawn,149,37.9894559830427,-84.5594420190900,,serviceberry,Amelanchier canadensis,,,,,,,"May, 2020",,,,,Reforest The Bluegrass @ Home donation
+3. Front Lawn,150,37.9894080385565,-84.5593260135501,,serviceberry,Amelanchier canadensis,,,,,,,"May, 2020",,,,,Reforest The Bluegrass @ Home donation
+3. Front Lawn,151,37.9893819708377,-84.5592670049518,,serviceberry,Amelanchier canadensis,,,,,,,"May, 2020",,,,,Reforest The Bluegrass @ Home donation
+4. Back Corner,152,37.9890300147235,-84.5584169961512,,serviceberry,Amelanchier canadensis,,,,,,,"May, 2020",,,,,Reforest The Bluegrass @ Home donation
+4. Back Corner,153,37.9889649711549,-84.5582930278033,,serviceberry,Amelanchier canadensis,,,,,,,"May, 2020",,,,,Reforest The Bluegrass @ Home donation
+4. Back Corner,154,37.9887430183589,-84.5583539642393,,rough leaf dogwood,Cornus drummondii,,,,,,Russ T.,"May, 2021",,,,,replacement by Russ Turpin
+4. Back Corner,155,37.9887949861586,-84.5583529584109,,persimmon,Diospyros virginiana,,,,,,,"May, 2020",,,,,4 shrubs in one area (2 RTB donations + 2 Russ T. replacements)
+4. Back Corner,156,37.9886540025472,-84.5584869850426,,rough leaf dogwood,Cornus drummondii,,,,,,,"May, 2020",,,,,Reforest The Bluegrass @ Home donation
+4. Back Corner,157,37.9883589595556,-84.5588090177625,,itea 'Little Henry',Itea virginica,,,,,,,"fall, 2020",,,,,Springhouse Gardens
+4. Back Corner,158,37.9882950056344,-84.5586439780890,,serviceberry,Amelanchier canadensis,,,,,,,"May, 2020",,,,,Reforest The Bluegrass @ Home donation
+4. Back Corner,159,37.9882789961993,-84.5586709678173,,serviceberry,Amelanchier canadensis,,,,,,,"May, 2020",,,,,Reforest The Bluegrass @ Home donation
+4. Back Corner,160,37.9882430378347,-84.5586899947375,,serviceberry,Amelanchier canadensis,,,,,,,"May, 2020",,,,,Reforest The Bluegrass @ Home donation
+4. Back Corner,161,37.9882029723376,-84.5587210077792,,serviceberry,Amelanchier canadensis,,,,,,,"May, 2020",,,,,Reforest The Bluegrass @ Home donation
+1. Memorial Garden,162,37.9880820214748,-84.5588510110974,,rough leaf dogwood,Cornus drummondii,,,,,,,"May, 2020",,,,,Reforest The Bluegrass @ Home donation
+1. Memorial Garden,163,37.9881560336798,-84.5589700341224,,fragrant sumac,Rhus aromatica,,,,,,,"fall, 2019",,,,,Springhouse Gardens
+1. Memorial Garden,164,37.9881700314581,-84.5590469799935,,winterberry holly,Ilex verticillata,,,,,,,"fall, 2019",,,,,"Springhouse Gardens, FEMALE"
+1. Memorial Garden,165,37.9881919920444,-84.5590579602867,,winterberry holly,Ilex verticillata,,,,,,,"fall, 2019",,,,,"Springhouse Gardens, MALE"
+1. Memorial Garden,166,37.9880940075963,-84.5589859597384,,serviceberry,Amelanchier canadensis,,,,,,,"May, 2020",,,,,Reforest The Bluegrass @ Home donation
+1. Memorial Garden,167,37.9880859609693,-84.5589199941605,,serviceberry,Amelanchier canadensis,,,,,,,"May, 2020",,,,,Reforest The Bluegrass @ Home donation
+1. Memorial Garden,168,37.9880390223115,-84.5589700341224,,sweet fern,Comptonia peregrina,,,,,,,"fall, 2019",,,,,Springhouse Gardens
+1. Memorial Garden,169,37.9880329873412,-84.5590120274573,,rough leaf dogwood,Cornus drummondii,,,,,,,"May, 2020",,,,,Reforest The Bluegrass @ Home donation
+1. Memorial Garden,170,37.9879990406334,-84.5589019730687,,rough leaf dogwood,Cornus drummondii,,,,,,,"May, 2020",,,,,Reforest The Bluegrass @ Home donation
+1. Memorial Garden,171,37.9878709651529,-84.5589629933238,,rough leaf dogwood,Cornus drummondii,,,,,,,"May, 2020",,,,,Reforest The Bluegrass @ Home donation
+1. Memorial Garden,172,37.9880370106548,-84.5594410132616,,rough leaf dogwood,Cornus drummondii,,,,,,,"May, 2020",,,,,Reforest The Bluegrass @ Home donation
+1. Memorial Garden,173,37.9882380086928,-84.5595580246299,,witch hazel,Hamamelis virginiana,,,,,,,"May, 2020",,,,,"Reforest The Bluegrass @ Home donation, container"
+1. Memorial Garden,174,37.9882359970360,-84.5596539974212,,witch hazel,Hamamelis virginiana,,,,,,,"May, 2020",,,,,"Reforest The Bluegrass @ Home donation, container"
+1. Memorial Garden,175,37.9880879726260,-84.5592840202152,,itea,Itea virginica,,,,,,,"April, 2021",,,,,Dropseed Nursery
+1. Memorial Garden,176,37.9880919959396,-84.5592219941318,,ninebark,Physocarpus opulifolius,,,,,,,"April, 2021",,,,,Dropseed Nursery
+1. Memorial Garden,177,37.9880889784544,-84.5592000335454,,itea,Itea virginica,,,,,,,"April, 2021",,,,,Dropseed Nursery
+1. Memorial Garden,178,37.9880899842828,-84.5591769833117,,ninebark,Physocarpus opulifolius,,,,,,,"April, 2021",,,,,Dropseed Nursery
+1. Memorial Garden,179,37.9881140403449,-84.5591599680483,,itea,Itea virginica,,,,,,,"April, 2021",,,,,Dropseed Nursery
+1. Memorial Garden,180,37.9880769923329,-84.5591580402106,,itea,Itea virginica,,,,,,,"April, 2021",,,,,Dropseed Nursery
+1. Memorial Garden,181,37.9880719631910,-84.5591530110687,,strawberry bush,Euonymous americana,,,,,,,"fall, 2019",,,,,Springhouse Gardens
+1. Memorial Garden,182,37.9880670178681,-84.5591280329972,,strawberry bush,Euonymous americana,,,,,,,"fall, 2019",,,,,Springhouse Gardens
+1. Memorial Garden,183,37.9880279581993,-84.5591789949685,,serviceberry,Amelanchier canadensis,,,,,,,"May, 2020",,,,,Reforest The Bluegrass @ Home donation
+3. Front Lawn,184,37.9886720236390,-84.5594349782913,,witch hazel,Hamamelis virginiana,,,,,,,"fall, 2019",,,,,Springhouse Gardens
+3. Front Lawn,185,37.9887400008738,-84.5595740340650,,hazelnut,Corylus americana,,,,,,,"fall, 2019",,,,,Trees Lexington! pocket nursery donation
+3. Front Lawn,186,37.9888069722801,-84.5598399918526,,white oak,Quercus alba,,,,,,,"fall, 2019",,,,,Trees Lexington! pocket nursery donation
+3. Front Lawn,187,37.9887890350073,-84.5598760340362,,bur oak,Quercus macrocarpa,,,,,,,"May, 2020",,,,,Reforest The Bluegrass @ Home donation
+2. Woods,188,37.9889489617198,-84.5600330270826,,black haw viburnum,Viburnum prunifolium,,,,,,,"April, 2021",,,,,Dropseed Nursery
+2. Woods,189,37.9889600258320,-84.5600730087608,,black haw viburnum,Viburnum prunifolium,,,,,,,"April, 2021",,,,,Dropseed Nursery
+2. Woods,190,37.9889679886400,-84.5599860046058,,spicebush,Lindera benzoin,,,,,,,"April, 2021",,,,,Dropseed Nursery
+2. Woods,191,37.9889730177819,-84.5600669737905,,black cherry,Prunus serotina,,,,,,,"May, 2020",,,,,Reforest The Bluegrass @ Home donation
+2. Woods,192,37.9889310244470,-84.5601109787821,,spicebush,Lindera benzoin,,,,,,,"April, 2021",,,,,Dropseed Nursery
+2. Woods,193,37.9888890311121,-84.5601580012589,,black haw viburnum,Viburnum prunifolium,,,,,,,"April, 2021",,,,,Dropseed Nursery
+2. Woods,194,37.9888349678367,-84.5602300018072,,black haw viburnum,Viburnum prunifolium,,,,,,,"April, 2021",,,,,Dropseed Nursery
+2. Woods,195,37.9889010172337,-84.5602659601718,,spicebush,Lindera benzoin,,,,,,,"April, 2021",,,,,Dropseed Nursery
+2. Woods,196,37.9887959919869,-84.5602709893137,,spicebush,Lindera benzoin,,,,,,,"April, 2021",,,,,Dropseed Nursery
+2. Woods,197,37.9887059703469,-84.5602880045771,,black haw viburnum,Viburnum prunifolium,,,,,,,"April, 2021",,,,,Dropseed Nursery
+2. Woods,198,37.9887799825519,-84.5601620245724,,black haw viburnum,Viburnum prunifolium,,,,,,,"April, 2021",,,,,Dropseed Nursery
+2. Woods,199,37.9890369717031,-84.5606330037117,,river birch,Betula negra,,,,,,,"May, 2020",,,,,Reforest The Bluegrass @ Home donation
+2. Woods,200,37.9893200285732,-84.5602910220623,,bladdernut,Staphylea trifolia,,,,,,,"April, 2021",,,,,Dropseed Nursery
+2. Woods,201,37.9893460124731,-84.5602419879287,,bladdernut,Staphylea trifolia,,,,,,,"April, 2021",,,,,Dropseed Nursery
+2. Woods,202,37.9893119819462,-84.5602369587868,,buttonbush,Cephalanthus occidentalis,,,,,,,"May, 2021",,,,,Wild Ones grant
+2. Woods,203,37.9893119819462,-84.5602369587868,,buttonbush,Cephalanthus occidentalis,,,,,,,"May, 2021",,,,,Wild Ones grant
+2. Woods,204,37.9893119819462,-84.5602369587868,,buttonbush,Cephalanthus occidentalis,,,,,,,"May, 2021",,,,,Wild Ones grant
+2. Woods,205,37.9893050249665,-84.5598959829658,,northern red oak,Quercus rubra,,,,,,,"May, 2020",,,,,Reforest The Bluegrass @ Home donation
+2. Woods,206,37.9892760235816,-84.5599440112710,,sycamore,Platanus occidentalis,,,,,,,"May, 2020",,,,,Reforest The Bluegrass @ Home donation

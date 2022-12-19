@@ -1,5 +1,5 @@
 # trees4uucl
-A repo for documenting the creation of a tree inventory on the property of UUCL Lexington Kentucky.
+A repo for documenting the creation of a tree inventory on the property of UUCL Kentucky.
 
 <!-- TOC -->
 

@@ -74,7 +74,7 @@ Upon adding csv file based on lat/long given, it aligns perfectly with the kmz f
 
 ## Part III. Proposed Visuals  
 App Map Layer with color coded system for maintenance and priority of action  
-    - SVG with tree in it colored accordingly 
+    - SVG with tree in it colored accordingly (work in coolors for accessible colors)
         - red = high priority  
         - orange = medium priority  
         - yellow = low priority  
@@ -102,7 +102,16 @@ Objectives:
 ## Part V. Data Processing and Storage
 Add csv as delimited text layer to QGIS  
 Export as geojson  
-Load geojson into html for vanilla js transformation  
+Load geojson via ajax into html for vanilla js transformation  
+Access single geojson, assign 'health' of trees to separate layers
+    - Good
+    - Moderate
+    - Declining
+    - Dead
+    - null (may need to return to this one to address by re-exporting from qgis with null equal to a 'null' text)
+    - current sticking point is that they are all a single data file and have to select which points to represent (could work around this by returning to qgis and exporting 5 different files and reloading them separately but would like to try accessing in js first)
+Add legend layer control to turn on and off specific tree type
+Confirm projecting correctly NAD 83 (3089)
 
 ## Part VI. Data Stack and JS Libraries to Employ  
 html to host & leaflet js for interactivity:  
@@ -129,7 +138,7 @@ Past files to reflect upon:
     - 672-8: wind solar plant, leaflet markes, layers/overlapping  
     - 672-9: median counties rent across usa, housing in ky, chloropleth map, drop down menu?  
     - Denver home hunting (using the legend to turn layers on and off)
-    - Fragipan (on portfolio) What's in the pan final (where am i geolocator, points with tooltips, hide info button, zoom in/out)  
+    - Fragipan (on portfolio) What's in the pan final (where am i geolocator, points with tooltips, hide info button, zoom in/out, accessing geojson to add layer)  
     - 673-3: Oregon unemployment rates by county, zoom rolling, legend, slider bar for year, visual affordance+click, tooltip)  
 
 ## References for readme  

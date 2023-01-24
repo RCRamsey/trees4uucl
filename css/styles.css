@@ -1,0 +1,155 @@
+ /* custom CSS style rules from previous example need to edit and reference for uucl*/
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 90%;
+            color: #1b385a;
+        }
+
+        h1 {
+            position: absolute;
+            margin-top: 0;
+            top: 10px;
+            left: 15px;
+            font-size: 1.5em;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            letter-spacing: .04em;
+            padding: 10px 15px;
+            /* Add styles to match Leaflet UI elements */
+            background: rgba(256, 256, 256, .9);
+            fill-opacity: .8;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            z-index: 800;
+        }
+
+        h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.2em;
+            letter-spacing: .04em;
+
+        }
+
+        #map {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+        }
+
+        #about {
+            position: absolute;
+            bottom: 20px;
+            left: 15px;
+            width: 280px;
+            padding: 0 15px;
+            height: 400px;
+            overflow: scroll;
+            overflow-x: hidden;
+
+            /* Add styles to match Leaflet UI elements */
+            background: rgba(256, 256, 256, .9);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            z-index: 800;
+        }
+
+        #info {
+            position: absolute;
+            margin-top: 0;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            letter-spacing: .04em;
+            color: #3d3d3d;
+            padding: 5px 10px;
+            top: 130px;
+            right: 10px;
+            z-index: 1000;
+            border-radius: 4px;
+            border: 1px solid #aaa;
+            background: rgba(256, 256, 256, .3);
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+        }
+
+        p {
+            font-size: .9em;
+            line-height: 1.5em;
+        }
+
+        a {
+            color: #2c394f;
+            text-decoration: underline;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Leaflet popup styles */
+        .leaflet-popup-content {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.1em;
+            /*vw viewport width, 1vw = 1%*/
+            max-width: 20vw;
+        }
+
+        /*cascading style to indicate img rules within the .leaflet-popup-content*/
+        .leaflet-popup-content img {
+            width: 100%;
+        }
+
+        /* 
+		When browser is 900px high or less
+		make the font a little smaller.
+		 */
+        @media screen and (max-height: 400px) {
+
+            #about p {
+                font-size: .6em;
+            }
+
+            h1 {
+                font-size: 1.2em;
+            }
+
+            #about h2 {
+                font-size: 1em;
+            }
+
+            .leaflet-popup-content {
+                font-family: 'Montserrat', sans-serif;
+                font-size: 0.9em;
+            }
+        }
+
+        /* Don't display info block when window is very small */
+        @media screen and (max-height: 200px) {
+
+            #about {
+                display: none;
+            }
+        }
+
+        #info {
+            position: absolute;
+            margin-top: 0;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            letter-spacing: .04em;
+            color: #3d3d3d;
+            padding: 5px 10px;
+            top: 130px;
+            right: 10px;
+            z-index: 1000;
+            /*can't place button over map without z index default z index is 0, 1000 is higher than all other panes*/
+            border-radius: 4px;
+            border: 1px solid #aaa;
+            background: rgba(256, 256, 256, .3);
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+        }
+
+

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset=utf-8 />
+    <title>UUCL Tree Inventory</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+
+    <!-- Add UUCL icon for the tab image on webpage -->
+    <!-- <link rel='icon' href='https://newmapsplus.github.io/favicon.ico' type='image/x-icon' /> -->
+
+    <!-- make sure most up to date versions of links -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+        integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="crossorigin=""/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol/dist/L.Control.Locate.min.css" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap"
+    rel="stylesheet">
+
+     <!-- my general css styles -->
+     <link href='css/styles.css' rel='stylesheet' />
+
+    <style> 
+    /* styles stored in styles.css file */    
+    </style>
+</head>
+
+<body>
+
+    <h1 id='title'>UUCL Maintenance Tree Inventory </h1>
+
+    <div id='map'></div>
+    <button id='info'>Info</button>
+
+    <section id="about">
+        <h2>About</h2>
+        <p>This tree inventory is a part of the 7 acres grounds project to maintain the health of the property's trees.</p>
+
+        <p>Map data obtained from <a href="https://www.uucl.org/seven-acres">UUCL 7 Acres Group</a>.
+        </p>
+        
+        <p>Map authored by RC Ramsey<br>See other projects at: <a href="https://github.com/RCRamsey">RC Ramsey Github</a></p>
+        <p>Map made possible by:</p>
+    </section>
+
+    <!--Load scripts-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!--Most up to date leaflet-->
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+        integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+        crossorigin=""></script>
+    <!--load script for full projection CRS support in leaflet-->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.7.2/proj4.js'></script>
+    <!-- Load a Leaflet plugin to provide geolocation. -->
+    <script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol/dist/L.Control.Locate.min.js" charset="utf-8"></script>
+    <!--Add project site file-->
+    <script src="data/uuclTreeInventoryModified_20221218.geojson"></script>
+
+
+    <script>
+        var options = {
+            center: [37.9888657, -84.559434],
+            zoom: 20,
+            zoomControl: false
+        }
+
+
+        var locate_options = {
+            position: 'topright',
+            strings: {
+                title: "Where am I?"
+            }
+        }
+
+        var map = L.map('map', options);
+
+        // add zoom control to top right window position
+        L.control.zoom({
+            position: 'topright'
+        }).addTo(map);
+
+        // add geolocation control to top right window position (Leaflet can handle multiple top-right elements)
+        L.control.locate(locate_options).addTo(map);
+
+        // Get basemap URL from Leaflet Providers http://leaflet-extras.github.io/leaflet-providers/preview/
+        var basemap_url = 'https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png'
+
+        var basemap_attributes = {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Tiles style by <a href="https://www.hotosm.org/" target="_blank">Humanitarian OpenStreetMap Team</a> hosted by <a href="https://openstreetmap.fr/" target="_blank">OpenStreetMap France</a>',
+            minZoom: 5,
+            maxZoom: 19
+        };
+        // request map tiles 
+        var tiles = L.tileLayer(basemap_url, basemap_attributes);
+        map.addLayer(tiles);
+
+        //add red tree data layer using ajax
+        var treeLayer = 
+        //$.when(countyLayer).done(function () {
+            $.getJSON("data/uuclTreeInventoryModified_20221218.geojson", function (data) {
+            //declare dataLayer assigning geoJson (dataLayer) layer for later reference 
+            var dataLayer = L.geoJson(data, {
+                //convert point data in layer to circle markers on leaflet
+                pointToLayer: function (features, latlng) {
+                    return L.circleMarker(latlng);
+                },
+                filter: function (
+                    features
+                ) {
+                    if (features.geometry.type == "Point") {
+                        return features;
+                    }
+                },
+                style: function (features) {
+                    return {
+                        color: ' #1b385a',
+                        fillColor: ' #1b385a',
+                        weight: 1,
+                        stroke: true,
+                        fillOpacity: 1,
+                        radius: 5,
+                    }
+                },
+                //add popup for each circle marker including county of site, soil series, pedon # if available and picture
+                onEachFeature: function (feature, layer) {
+                    var p = layer.feature.properties
+                    //console.log(p)
+                    var popup = `<h2> ${p["County"]} County</h2>${p["soil_series"]} <a
+                        href= ${p["soil_series_description"]}> Soil Series</a><br>
+                    <img src ='graphics/${p["image"]}'/><br>`
+                    if (p["updated_so"] != null) {
+                        popup += `NRCS Pedon # ${p["updated_so"]}`
+                    }
+
+                    layer.bindPopup(popup),
+
+                        //mouseover to open popup
+                        layer.on("mouseover", function (e) {
+                            this.openPopup();
+                            e.target.setStyle({
+                                fillColor: 'white',
+                                radius: 10,
+                            });
+                        });
+                    //mouseout to close popup and reset layer
+                    //console logs error that resetStyle() is not a function?
+                    layer.on("mouseout", function (e) {
+                        //this.closePopup();
+                        e.target.setStyle({
+                            fillColor: ' #1b385a',
+                            radius: 5,
+                        });
+                    });
+                }
+            }).addTo(map);
+        //});
+        // //load county layer
+        //     var countyLayer = 
+        //     //$.when(treeLayer).done(function () {
+        //         $.getJSON("data/tl_2019_us_county_4326.geojson", function (data) {
+        //             var dataLayer = L.geoJson(data, {
+        //                 style: function (feature) {
+        //                     return {
+        //                         color: '#a4b7d4',
+        //                         weight: .7,
+        //                         fillOpacity: 0.4,
+        //                         interactive: false
+        //                     };
+        //                 },
+        //                 //add UI of county name popup
+        //                 onEachFeature: function (feature, layer) {
+        //                     var p = layer.feature.properties
+        //                     var popup = `<h2> ${p["NAME"]} County</h2>`
+        //                     layer.bindPopup(popup),
+        //                         layer.on("click", function (e) {
+        //                             this.openPopup();
+        //                         })
+        //                 }
+        //             });
+        //             dataLayer.addTo(map)
+        //         });
+        //     //});
+
+    });
+
+        // //have jQuery wait until data loaded to add trail layer
+        // var state = $.when(treeLayer).done(function () {
+        //     // need to add trail geojson here?
+        //     $.getJSON("data/uucl_trail.geojson", function (data) {
+        //         var stateLayer = L.geoJson(data, {
+        //             style: function (feature) {
+        //                 return {
+        //                     color: '#1b385a',
+        //                     weight: 1.0,
+        //                     fillOpacity: 0,
+        //                     interactive: false
+        //                 };
+        //             }
+        //         });
+        //         stateLayer.addTo(map)
+        //     });
+        // });
+
+        //create button to maximize map space and reduce about/info/title
+        var button = document.querySelector('#info')
+        var title = document.querySelector('#title')
+        var about = document.querySelector('#about')
+        var clicked = false
+        button.addEventListener('click', function () {
+            clicked = !clicked
+            if (clicked) {
+                title.style.visibility = 'hidden'
+                about.style.visibility = 'hidden'
+                button.style.backgroundColor = '#aaa'
+                button.style.color = '#fff'
+            } else {
+                title.style.visibility = 'inherit'
+                about.style.visibility = 'inherit'
+                button.style.background = 'rgba(256, 256, 256, .3)'
+                button.style.color = '#3d3d3d'
+            }
+        })
+    </script>
+
+</body>
+
+</html>

@@ -110,14 +110,14 @@
                 filter: function (
                     features
                 ) {
-                    if (features.geometry.type == "Point") {
+                    if (features.geometry.type == "Point" && (features.properties.Health == "Dead")) {
                         return features;
                     }
                 },
                 style: function (features) {
                     return {
-                        color: ' #1b385a',
-                        fillColor: ' #1b385a',
+                        color: 'red',
+                        fillColor: 'red',
                         weight: 1,
                         stroke: true,
                         fillOpacity: 1,
@@ -128,29 +128,33 @@
                 onEachFeature: function (feature, layer) {
                     var p = layer.feature.properties
                     //console.log(p)
-                    var popup = `<h2> ${p["County"]} County</h2>${p["soil_series"]} <a
-                        href= ${p["soil_series_description"]}> Soil Series</a><br>
-                    <img src ='graphics/${p["image"]}'/><br>`
+                    var popup = 
+                        `<h2> Tree ID ${p["Tree ID #"]} </h2> 
+                        Common Name: ${p["Common Name"]} <br>
+                        DBH: ${p["DBH"]} <br>
+                        Planted: ${p["Date"]}<br>
+                        Structure: ${p["Structure"]}<br>
+                        Health: ${p["Health"]}<br>
+                        Hazard: ${p["Hazard\/Safety"]}<br>
+                        Maintenance Recommendation: ${p["Maintenance"]}<br>`
                     if (p["updated_so"] != null) {
                         popup += `NRCS Pedon # ${p["updated_so"]}`
                     }
-
                     layer.bindPopup(popup),
 
                         //mouseover to open popup
-                        layer.on("mouseover", function (e) {
+                        layer.on("click", function (e) {
                             this.openPopup();
                             e.target.setStyle({
                                 fillColor: 'white',
                                 radius: 10,
                             });
                         });
-                    //mouseout to close popup and reset layer
-                    //console logs error that resetStyle() is not a function?
+                    //click outside or x to close popup and reset layer
                     layer.on("mouseout", function (e) {
                         //this.closePopup();
                         e.target.setStyle({
-                            fillColor: ' #1b385a',
+                            fillColor: 'red',
                             radius: 5,
                         });
                     });

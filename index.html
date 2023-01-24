@@ -102,7 +102,7 @@
         //$.when(countyLayer).done(function () {
             $.getJSON("data/uuclTreeInventoryModified_20221218.geojson", function (data) {
             //declare dataLayer assigning geoJson (dataLayer) layer for later reference 
-            var dataLayer = L.geoJson(data, {
+            var dataDeadTreeLayer = L.geoJson(data, {
                 //convert point data in layer to circle markers on leaflet
                 pointToLayer: function (features, latlng) {
                     return L.circleMarker(latlng);
@@ -160,35 +160,36 @@
                     });
                 }
             }).addTo(map);
-        //});
-        // //load county layer
-        //     var countyLayer = 
-        //     //$.when(treeLayer).done(function () {
-        //         $.getJSON("data/tl_2019_us_county_4326.geojson", function (data) {
-        //             var dataLayer = L.geoJson(data, {
-        //                 style: function (feature) {
-        //                     return {
-        //                         color: '#a4b7d4',
-        //                         weight: .7,
-        //                         fillOpacity: 0.4,
-        //                         interactive: false
-        //                     };
-        //                 },
-        //                 //add UI of county name popup
-        //                 onEachFeature: function (feature, layer) {
-        //                     var p = layer.feature.properties
-        //                     var popup = `<h2> ${p["NAME"]} County</h2>`
-        //                     layer.bindPopup(popup),
-        //                         layer.on("click", function (e) {
-        //                             this.openPopup();
-        //                         })
-        //                 }
-        //             });
-        //             dataLayer.addTo(map)
-        //         });
-        //     //});
 
-    });
+            //load poorTree layer
+            var poorTreeLayer = $.when(treeLayer).done(function (data) {
+                    //$.getJSON("data/tl_2019_us_county_4326.geojson", function (data) {
+                    var dataPoorTreeLayer = L.geoJson(data, {
+                            //convert point data in layer to circle markers on leaflet
+                            pointToLayer: function (features, latlng) {
+                                return L.circleMarker(latlng);
+                            },
+                            filter: function (
+                                features
+                            ) {
+                                if (features.geometry.type == "Point" && (features.properties.Health == "Declining")) 
+                                {
+                                return features;
+                                }
+                            },
+                            style: function (features) {
+                                return {
+                                    color: 'orange',
+                                    fillColor: 'orange',
+                                    weight: 1,
+                                    stroke: true,
+                                    fillOpacity: 1,
+                                    radius: 5,
+                                }
+                            }
+                    }).addTo(map);
+                });
+        });
 
         // //have jQuery wait until data loaded to add trail layer
         // var state = $.when(treeLayer).done(function () {

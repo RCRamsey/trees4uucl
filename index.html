@@ -186,6 +186,41 @@
                                     fillOpacity: 1,
                                     radius: 5,
                                 }
+                            }, 
+                                        //add popup for each circle marker including county of site, soil series, pedon # if available and picture
+                            onEachFeature: function (feature, layer) {
+                                var p = layer.feature.properties
+                                //console.log(p)
+                                var popup = 
+                                    `<h2> Tree ID ${p["Tree ID #"]} </h2> 
+                                    Common Name: ${p["Common Name"]} <br>
+                                    DBH: ${p["DBH"]} <br>
+                                    Planted: ${p["Date"]}<br>
+                                    Structure: ${p["Structure"]}<br>
+                                    Health: ${p["Health"]}<br>
+                                    Hazard: ${p["Hazard\/Safety"]}<br>
+                                    Maintenance Recommendation: ${p["Maintenance"]}<br>`
+                                if (p["updated_so"] != null) {
+                                    popup += `NRCS Pedon # ${p["updated_so"]}`
+                                }
+                                layer.bindPopup(popup),
+
+                                    //mouseover to open popup
+                                    layer.on("click", function (e) {
+                                        this.openPopup();
+                                        e.target.setStyle({
+                                            fillColor: 'white',
+                                            radius: 10,
+                                        });
+                                    });
+                                //click outside or x to close popup and reset layer
+                                layer.on("mouseout", function (e) {
+                                    //this.closePopup();
+                                    e.target.setStyle({
+                                        fillColor: 'orange',
+                                        radius: 5,
+                                    });
+                                });
                             }
                     }).addTo(map);
                 });

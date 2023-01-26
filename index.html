@@ -97,11 +97,10 @@
         var tiles = L.tileLayer(basemap_url, basemap_attributes);
         map.addLayer(tiles);
 
-        //add red tree data layer using ajax
+        //add tree data layer using ajax
         var treeLayer = 
-        //$.when(countyLayer).done(function () {
             $.getJSON("data/uuclTreeInventoryModified_20221218.geojson", function (data) {
-            //declare dataLayer assigning geoJson (dataLayer) layer for later reference 
+            //❤️ declare dataDeadTreeLayer assigning geoJson (dataLayer) layer for later reference 
             var dataDeadTreeLayer = L.geoJson(data, {
                 //convert point data in layer to circle markers on leaflet
                 pointToLayer: function (features, latlng) {
@@ -136,7 +135,7 @@
                         Structure: ${p["Structure"]}<br>
                         Health: ${p["Health"]}<br>
                         Hazard: ${p["Hazard\/Safety"]}<br>
-                        Maintenance Recommendation: ${p["Maintenance"]}<br>`
+                        Recommendation: ${p["Maintenance"]}<br>`
                     if (p["updated_so"] != null) {
                         popup += `NRCS Pedon # ${p["updated_so"]}`
                     }
@@ -161,10 +160,10 @@
                 }
             }).addTo(map);
 
-            //load poorTree layer
-            var poorTreeLayer = $.when(treeLayer).done(function (data) {
+            // 🧡 load decliningTree layer
+            var decliningTreeLayer = $.when(dataDeadTreeLayer).done(function (data) {
                     //$.getJSON("data/tl_2019_us_county_4326.geojson", function (data) {
-                    var dataPoorTreeLayer = L.geoJson(data, {
+                    var dataDecliningTreeLayer = L.geoJson(data, {
                             //convert point data in layer to circle markers on leaflet
                             pointToLayer: function (features, latlng) {
                                 return L.circleMarker(latlng);
@@ -199,7 +198,7 @@
                                     Structure: ${p["Structure"]}<br>
                                     Health: ${p["Health"]}<br>
                                     Hazard: ${p["Hazard\/Safety"]}<br>
-                                    Maintenance Recommendation: ${p["Maintenance"]}<br>`
+                                    Recommendation: ${p["Maintenance"]}<br>`
                                 if (p["updated_so"] != null) {
                                     popup += `NRCS Pedon # ${p["updated_so"]}`
                                 }
@@ -224,6 +223,135 @@
                             }
                     }).addTo(map);
                 });
+
+                
+        //  💛 load moderateTree layer
+            var moderateTreeLayer = $.when(decliningTreeLayer).done(function (data) {
+                    //$.getJSON("data/tl_2019_us_county_4326.geojson", function (data) {
+                    var dataModerateTreeLayer = L.geoJson(data, {
+                            //convert point data in layer to circle markers on leaflet
+                            pointToLayer: function (features, latlng) {
+                                return L.circleMarker(latlng);
+                            },
+                            filter: function (
+                                features
+                            ) {
+                                if (features.geometry.type == "Point" && (features.properties.Health == "Declining")) 
+                                {
+                                return features;
+                                }
+                            },
+                            style: function (features) {
+                                return {
+                                    color: 'yellow',
+                                    fillColor: 'yellow',
+                                    weight: 1,
+                                    stroke: true,
+                                    fillOpacity: 1,
+                                    radius: 5,
+                                }
+                            }, 
+                                        //add popup for each circle marker including county of site, soil series, pedon # if available and picture
+                            onEachFeature: function (feature, layer) {
+                                var p = layer.feature.properties
+                                //console.log(p)
+                                var popup = 
+                                    `<h2> Tree ID ${p["Tree ID #"]} </h2> 
+                                    Common Name: ${p["Common Name"]} <br>
+                                    DBH: ${p["DBH"]} <br>
+                                    Planted: ${p["Date"]}<br>
+                                    Structure: ${p["Structure"]}<br>
+                                    Health: ${p["Health"]}<br>
+                                    Hazard: ${p["Hazard\/Safety"]}<br>
+                                    Recommendation: ${p["Maintenance"]}<br>`
+                                if (p["updated_so"] != null) {
+                                    popup += `NRCS Pedon # ${p["updated_so"]}`
+                                }
+                                layer.bindPopup(popup),
+
+                                    //mouseover to open popup
+                                    layer.on("click", function (e) {
+                                        this.openPopup();
+                                        e.target.setStyle({
+                                            fillColor: 'white',
+                                            radius: 10,
+                                        });
+                                    });
+                                //click outside or x to close popup and reset layer
+                                layer.on("mouseout", function (e) {
+                                    //this.closePopup();
+                                    e.target.setStyle({
+                                        fillColor: 'yellow',
+                                        radius: 5,
+                                    });
+                                });
+                            }
+                    }).addTo(map);
+                });
+
+            //   💚  // load goodTree layer
+            // var goodTreeLayer = $.when(moderateTreeLayer).done(function (data) {
+            //         //$.getJSON("data/tl_2019_us_county_4326.geojson", function (data) {
+            //         var dataGoodTreeLayer = L.geoJson(data, {
+            //                 //convert point data in layer to circle markers on leaflet
+            //                 pointToLayer: function (features, latlng) {
+            //                     return L.circleMarker(latlng);
+            //                 },
+            //                 filter: function (
+            //                     features
+            //                 ) {
+            //                     if (features.geometry.type == "Point" && (features.properties.Health == "Declining")) 
+            //                     {
+            //                     return features;
+            //                     }
+            //                 },
+            //                 style: function (features) {
+            //                     return {
+            //                         color: 'green',
+            //                         fillColor: 'green',
+            //                         weight: 1,
+            //                         stroke: true,
+            //                         fillOpacity: 1,
+            //                         radius: 5,
+            //                     }
+            //                 }, 
+            //                             //add popup for each circle marker including county of site, soil series, pedon # if available and picture
+            //                 onEachFeature: function (feature, layer) {
+            //                     var p = layer.feature.properties
+            //                     //console.log(p)
+            //                     var popup = 
+            //                         `<h2> Tree ID ${p["Tree ID #"]} </h2> 
+            //                         Common Name: ${p["Common Name"]} <br>
+            //                         DBH: ${p["DBH"]} <br>
+            //                         Planted: ${p["Date"]}<br>
+            //                         Structure: ${p["Structure"]}<br>
+            //                         Health: ${p["Health"]}<br>
+            //                         Hazard: ${p["Hazard\/Safety"]}<br>
+            //                         Recommendation: ${p["Maintenance"]}<br>`
+            //                     if (p["updated_so"] != null) {
+            //                         popup += `NRCS Pedon # ${p["updated_so"]}`
+            //                     }
+            //                     layer.bindPopup(popup),
+
+            //                         //mouseover to open popup
+            //                         layer.on("click", function (e) {
+            //                             this.openPopup();
+            //                             e.target.setStyle({
+            //                                 fillColor: 'white',
+            //                                 radius: 10,
+            //                             });
+            //                         });
+            //                     //click outside or x to close popup and reset layer
+            //                     layer.on("mouseout", function (e) {
+            //                         //this.closePopup();
+            //                         e.target.setStyle({
+            //                             fillColor: 'green',
+            //                             radius: 5,
+            //                         });
+            //                     });
+            //                 }
+            //         }).addTo(map);
+            //     });
         });
 
         // //have jQuery wait until data loaded to add trail layer

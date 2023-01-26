@@ -138,8 +138,9 @@ Past files to reflect upon:
     - 672-8: wind solar plant, leaflet markes, layers/overlapping  
     - 672-9: median counties rent across usa, housing in ky, chloropleth map, drop down menu?  
     - Denver home hunting (using the legend to turn layers on and off)
-    - Fragipan (on portfolio) What's in the pan final (where am i geolocator, points with tooltips, hide info button, zoom in/out, accessing geojson to add layer)  
+    - Fragipan (on portfolio) What's in the pan final (where am i geolocator, points with tooltips (including pictures and links), hide info button, zoom in/out, accessing geojson to add layer)  
     - 673-3: Oregon unemployment rates by county, zoom rolling, legend, slider bar for year, visual affordance+click, tooltip)  
+
 
 ## References for readme  
 

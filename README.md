@@ -82,36 +82,41 @@ App Map Layer with color coded system for maintenance and priority of action
 Could make into an interactive web map, allow pin pointing user location to help them identify where on the property they are with respect to the trees.  Would need to confirm accuracy of geolocator if it would fulfill the zoome level necessary to prove useful.  
 
 ## Part IV. Objectives and User Needs
-Maintenance User Needs: 
-    - Tree ID 
-    - Health 
-    - Maintenance Recommendations
-    - Hazard/Safety
-    - Use on mobile device
-Visitor User Needs:
-    - Tree ID 
-    - Identify Differences Between Trees using Common Name
-    - Could later add photographs
-    - Use on mobile device
-Objectives:
-    - Will need to be able to click through variety of different layers with drop down menu  
-    - Will need to be able to click on point and access popup modal of information  
-    - Will need to geolocate oneself in reference to the tree 
-    - May or may not need to turn off and on an info box or legend box if covers screen 
+Maintenance User Needs:  
+    - Tree ID   
+    - Health   
+    - Maintenance Recommendations  
+    - Hazard/Safety  
+    - Use on mobile device  
+Visitor User Needs:  
+    - Tree ID   
+    - Identify Differences Between Trees using Common Name  
+    - Could later add photographs   
+    - Use on mobile device   
+Objectives:   
+    - Will need to be able to click through variety of different layers with drop down menu    
+    - Will need to be able to click on point and access popup modal of information    
+    - Will need to geolocate oneself in reference to the tree   
+    - May or may not need to turn off and on an info box or legend box if covers screen   
 
-## Part V. Data Processing and Storage
+## Part V. Data Processing, Storage, Next Steps
 Add csv as delimited text layer to QGIS  
-Export as geojson  
+Export as geojson   
 Load geojson via ajax into html for vanilla js transformation  
-Access single geojson, assign 'health' of trees to separate layers
-    - Good
-    - Moderate
-    - Declining
-    - Dead
-    - null (may need to return to this one to address by re-exporting from qgis with null equal to a 'null' text)
-    - current sticking point is that they are all a single data file and have to select which points to represent (could work around this by returning to qgis and exporting 5 different files and reloading them separately but would like to try accessing in js first)
-Add legend layer control to turn on and off specific tree type
-Confirm projecting correctly NAD 83 (3089)
+Access single geojson, assign 'health' of trees to separate layers  
+    - Good  
+    - Moderate  
+    - Declining  
+    - Dead  
+    - null (may need to return to this one to address by re-exporting from qgis with null equal to a 'null' text)  
+    - current sticking point is that they are all a single data file and have to select which points to represent (could work around this by returning to qgis and exporting 5 different files and reloading them separately but would like to try accessing in js first)  
+Add legend layer control to turn on and off specific tree type or structure/health/hazard  
+Hosting on Github publicly, UUCL page publicly or behind log-in?  
+Confirm projecting correctly NAD 83 (3089)  
+Add DGI aerial? Add to data sources and citations (clipped or rest services?)  
+Load from Google csv? or stay packaged on website (github/uucl page)  
+Add Ian's tree layer or 3 d trees? Could work in Felt?  
+Refactor code where styling is external from html.
 
 ## Part VI. Data Stack and JS Libraries to Employ  
 html to host & leaflet js for interactivity:  
@@ -119,10 +124,7 @@ Leaflet js to access osm data for basemap, or kyabove for aerial data.
 Leaflet js to access [GeoJSON object](https://leafletjs.com/examples/geojson/)   
 Leaflet js to control [groups & layers](https://leafletjs.com/examples/layers-control/)  
 Leaflet js to access geolocation [leaflet on mobile example](https://leafletjs.com/examples/mobile/)  
-If opt for a proprietary data (bing maps) could load using a leaflet plugin?  
-
-
-
+ 
 ## Part VII. Layout  
 ### Mockup WireFrame 1  
 <img src="images/wireframe1_20230124.jpg" alt="image" width="400"/>
@@ -140,7 +142,6 @@ Past files to reflect upon:
     - Denver home hunting (using the legend to turn layers on and off)
     - Fragipan (on portfolio) What's in the pan final (where am i geolocator, points with tooltips (including pictures and links), hide info button, zoom in/out, accessing geojson to add layer)  
     - 673-3: Oregon unemployment rates by county, zoom rolling, legend, slider bar for year, visual affordance+click, tooltip)  
-
 
 ## References for readme  
 

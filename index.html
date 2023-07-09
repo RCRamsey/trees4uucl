@@ -36,9 +36,9 @@
 
     <section id="about">
         <h2>About</h2>
-        <p>This tree inventory is a part of the 7 acres grounds project to maintain the health of the property's trees.</p>
+        <p>This tree inventory is a part of the <b>Seven Acres</b> grounds project to maintain the health of the property's trees.</p>
 
-        <p>Map data obtained from <a href="https://www.uucl.org/seven-acres">UUCL 7 Acres Group</a>.
+        <p>Map data obtained from <a href="https://www.uucl.org/seven-acres">UUCL Seven Acres Group</a>.
         </p>
         
         <p>Map authored by RC Ramsey<br>See other projects at: <a href="https://github.com/RCRamsey">RC Ramsey Github</a></p>
@@ -57,14 +57,15 @@
     <!-- Load a Leaflet plugin to provide geolocation. -->
     <script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol/dist/L.Control.Locate.min.js" charset="utf-8"></script>
     <!--Add project site file-->
-    <script src="data/uuclTreeInventoryModified_20221218.geojson"></script>
+    <!-- <script src="data/uuclTreeInventoryModified_20221218.geojson"></script> -->
+    <!-- Load csv2geojson so can load csv as geojson-->
+    <script src="https://npmcdn.com/csv2geojson@latest/csv2geojson.js"></script>"
 
 
     <script>
         var options = {
             center: [37.9888657, -84.559434],
-            zoom: 20,
-            zoomControl: false
+            zoom: 20, 
         }
 
 
@@ -91,37 +92,72 @@
         var basemap_attributes = {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Tiles style by <a href="https://www.hotosm.org/" target="_blank">Humanitarian OpenStreetMap Team</a> hosted by <a href="https://openstreetmap.fr/" target="_blank">OpenStreetMap France</a>',
             minZoom: 5,
-            maxZoom: 19
+            maxZoom: 40, // 19 based on basemap requirements but increased for developing
+            zoomControl: false
         };
         // request map tiles 
         var tiles = L.tileLayer(basemap_url, basemap_attributes);
         map.addLayer(tiles);
 
-        //add tree data layer using ajax
-        var treeLayer = 
-            $.getJSON("data/uuclTreeInventoryModified_20221218.geojson", function (data) {
+        // Fetch data and parse csv as geojson
+
+        // traditional function expression
+        // (function(paramater) { return a + 100;});
+        // Arrow function expression
+        // (parameter) => { return a + 100; };
+
+        // fetch csv data from google sheet and assign to var response
+        // public if looking at code will be able to download this file but not edit it (can maintain restricted access to only those with link)
+        const response = fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vRb2HWYGivW1pJu_J-6d9PsFDy8otnbdY0YPIuPyHzG8ikCyodwiNrRtYTCU9XfDaTsLujo-vREmWYf/pub?output=csv')
+        
+        // OR fetch csv data from project folder
+        //const response = fetch('data/afcModified.csv')
+
+        //.then() run code if previous is successful
+        //response parameter passed on to next funx and text returned from response variable
+        .then(response => response.text()) 
+        //text parameter passed on to next funx and reference api
+        // parse csv file and derive geojson FeatureCollection object from it
+        // Err is non-falsy if lat and long values can not be detected or if invalid rows in file
+        // Delimeter can be ',' or '\t' or '|' 
+        .then(text => { 
+            csv2geojson.csv2geojson(text, function(err,data) {
+                const geoJsonData = {
+                    type:'FeatureCollection',
+                    features: data.features
+                };
+                createLayers(geoJsonData)
+            });
+        });    
+
+        function createLayers(geoJsonData){
+            var treeLayer = L.geoJson(geoJsonData, {
+                pointToLayer: function (features, latlng) {
+                return L.circleMarker(latlng);
+                }
+            });
+        
+            //add tree data layer using ajax
+            // var treeLayer = 
+            //$.getJSON("data/uuclTreeInventoryModified_20221218.geojson", function (data) {
             //❤️ visualize dead trees assigning geoJson (dataLayer) layer for later reference 
-            var dataDeadTreeLayer = L.geoJson(data, {
+            var dataDeadTreeLayer = L.geoJson(treeLayer.toGeoJSON(), {
                 //convert point data in layer to circle markers on leaflet
                 pointToLayer: function (features, latlng) {
                     return L.circleMarker(latlng);
                 },
-                filter: function (
-                    features
-                ) {
-                    if (features.geometry.type == "Point" && (features.properties.Health == "Dead")) {
-                        return features;
-                    }
+                filter: function (features) {
+                    return (features.geometry.type === "Point" && (features.properties.Health === "Dead")); 
                 },
                 style: function (features) {
                     return {
-                        color: 'red',
-                        fillColor: 'red',
+                        color: '#000000',
+                        fillColor: '#000000',
                         weight: 1,
                         stroke: true,
                         fillOpacity: 1,
-                        radius: 5,
-                    }
+                        radius: 8,
+                    };
                 },
                 //add popup for each circle marker including county of site, soil series, pedon # if available and picture
                 onEachFeature: function (feature, layer) {
@@ -146,24 +182,26 @@
                             this.openPopup();
                             e.target.setStyle({
                                 fillColor: 'white',
-                                radius: 10,
+                                radius: 15,
                             });
                         });
                     //click outside or x to close popup and reset layer
                     layer.on("mouseout", function (e) {
                         //this.closePopup();
                         e.target.setStyle({
-                            fillColor: 'red',
-                            radius: 5,
+                            fillColor: '#24171B',
+                            radius: 8,
                         });
                     });
                 }
             }).addTo(map);
 
+        
+
             // 🧡 visualize declining trees
             var decliningTreeLayer = $.when(treeLayer).done(function (data) {
                     //$.getJSON("data/tl_2019_us_county_4326.geojson", function (data) {
-                    var dataDecliningTreeLayer = new L.geoJson(data, {
+                    var dataDecliningTreeLayer = new L.geoJson(treeLayer.toGeoJSON(), {
                             //convert point data in layer to circle markers on leaflet
                             pointToLayer: function (features, latlng) {
                                 return L.circleMarker(latlng);
@@ -178,12 +216,12 @@
                             },
                             style: function (features) {
                                 return {
-                                    color: 'orange',
-                                    fillColor: 'orange',
+                                    color: '#6A5C4D',
+                                    fillColor: '#6A5C4D',
                                     weight: 1,
                                     stroke: true,
                                     fillOpacity: 1,
-                                    radius: 5,
+                                    radius: 8,
                                 }
                             }, 
                                         //add popup for each circle marker including county of site, soil series, pedon # if available and picture
@@ -209,15 +247,15 @@
                                         this.openPopup();
                                         e.target.setStyle({
                                             fillColor: 'white',
-                                            radius: 10,
+                                            radius: 15,
                                         });
                                     });
                                 //click outside or x to close popup and reset layer
                                 layer.on("mouseout", function (e) {
                                     //this.closePopup();
                                     e.target.setStyle({
-                                        fillColor: 'orange',
-                                        radius: 5,
+                                        fillColor: '#82705E',
+                                        radius: 8,
                                     });
                                 });
                             }
@@ -228,7 +266,7 @@
             //  💛 visualize moderate trees
             var moderateTreeLayer = $.when(treeLayer).done(function (data) {
                     //$.getJSON("data/tl_2019_us_county_4326.geojson", function (data) {
-                    var dataModerateTreeLayer = new L.geoJson(data, {
+                    var dataModerateTreeLayer = new L.geoJson(treeLayer.toGeoJSON(), {
                             //convert point data in layer to circle markers on leaflet
                             pointToLayer: function (features, latlng) {
                                 return L.circleMarker(latlng);
@@ -243,12 +281,12 @@
                             },
                             style: function (features) {
                                 return {
-                                    color: 'yellow',
-                                    fillColor: 'yellow',
+                                    color: '#BEC185',
+                                    fillColor: '#BEC185',
                                     weight: 1,
                                     stroke: true,
                                     fillOpacity: 1,
-                                    radius: 5,
+                                    radius: 8,
                                 }
                             }, 
                                         //add popup for each circle marker including county of site, soil series, pedon # if available and picture
@@ -274,15 +312,15 @@
                                         this.openPopup();
                                         e.target.setStyle({
                                             fillColor: 'white',
-                                            radius: 10,
+                                            radius: 15,
                                         });
                                     });
                                 //click outside or x to close popup and reset layer
                                 layer.on("mouseout", function (e) {
                                     //this.closePopup();
                                     e.target.setStyle({
-                                        fillColor: 'yellow',
-                                        radius: 5,
+                                        fillColor: '#A9AD5C',
+                                        radius: 8,
                                     });
                                 });
                             }
@@ -291,7 +329,7 @@
 
             // 💚 visualize good trees
             var goodTreeLayer = $.when(treeLayer).done(function (data) {
-                    var dataGoodTreeLayer = L.geoJson(data, {
+                    var dataGoodTreeLayer = L.geoJson(treeLayer.toGeoJSON(), {
                             //convert point data in layer to circle markers on leaflet
                             pointToLayer: function (features, latlng) {
                                 return L.circleMarker(latlng);
@@ -306,12 +344,12 @@
                             },
                             style: function (features) {
                                 return {
-                                    color: 'green',
-                                    fillColor: 'green',
+                                    color: '#6D7D4F',
+                                    fillColor: '#6D7D4F',
                                     weight: 1,
                                     stroke: true,
                                     fillOpacity: 1,
-                                    radius: 5,
+                                    radius: 8,
                                 }
                             }, 
                                         //add popup for each circle marker including county of site, soil series, pedon # if available and picture
@@ -337,24 +375,24 @@
                                         this.openPopup();
                                         e.target.setStyle({
                                             fillColor: 'white',
-                                            radius: 10,
+                                            radius: 15,
                                         });
                                     });
                                 //click outside or x to close popup and reset layer
                                 layer.on("mouseout", function (e) {
                                     //this.closePopup();
                                     e.target.setStyle({
-                                        fillColor: 'green',
-                                        radius: 5,
+                                        fillColor: '#495435',
+                                        radius: 8,
                                     });
                                 });
                             }
                     }).addTo(map);
             });
 
-            // 💚 visualize null trees
+            // 💙 visualize null trees
             var nullTreeLayer = $.when(treeLayer).done(function (data) {
-                    var dataNullTreeLayer = L.geoJson(data, {
+                    var dataNullTreeLayer = L.geoJson(treeLayer.toGeoJSON(), {
                             //convert point data in layer to circle markers on leaflet
                             pointToLayer: function (features, latlng) {
                                 return L.circleMarker(latlng);
@@ -369,12 +407,12 @@
                             },
                             style: function (features) {
                                 return {
-                                    color: 'blue',
-                                    fillColor: 'blue',
+                                    color: 'pink',
+                                    fillColor: 'pink',
                                     weight: 1,
                                     stroke: true,
                                     fillOpacity: 1,
-                                    radius: 5,
+                                    radius: 8,
                                 }
                             }, 
                                         //add popup for each circle marker including county of site, soil series, pedon # if available and picture
@@ -400,21 +438,21 @@
                                         this.openPopup();
                                         e.target.setStyle({
                                             fillColor: 'white',
-                                            radius: 10,
+                                            radius: 15,
                                         });
                                     });
                                 //click outside or x to close popup and reset layer
                                 layer.on("mouseout", function (e) {
                                     //this.closePopup();
                                     e.target.setStyle({
-                                        fillColor: 'blue',
-                                        radius: 5,
+                                        fillColor: 'ECEBE9',
+                                        radius: 8,
                                     });
                                 });
                             }
                     }).addTo(map);
             });
-        });
+        }
 
         // //have jQuery wait until data loaded to add trail layer
         // var state = $.when(treeLayer).done(function () {

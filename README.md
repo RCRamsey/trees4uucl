@@ -20,21 +20,20 @@ A repo for documenting the creation of a tree inventory on the property of UUCL 
 <!-- /TOC -->
 
 ## Part I: Project Summary Proposal
-(Prior to posting live need to double check with UUCL if can post open source for ccby licensing. Can still link a screen shot of uucl app and link to uucl webpage where it ends up being hosted.)
-
-Create two map types requested:
-1. The utilization by 7 Acres Committee to monitor and maintain their tree inventory (interactive web map app).
-2. The utilization by general members and the public to walk the grounds and identify tree by common name (large poster board to print)
+Create two map types as requested:
+1. One for utilization by Seven Acres Committee to monitor and maintain their tree inventory (interactive web map app).
+2. A second for the utilization by general members and the public to walk the grounds and identify tree by common name (large poster board to print, mount or laminate and take on walks)
 
 Interactive web map app is the priority currently as not all trees have been mapped yet and would be easier to update the data file for this map than it would the paper printed map which would necessitate mulitple printings of poster upon every update.
 
 ## Part II: Data Sources
 ### Basemap Data
-Could use data from KYFromAbove N095E297 quadrant (recommended for clear imagery).
-Otherwise general basemap data from OSM.
+Currently: OSM basemap  
+Future: Add data from KYFromAbove and Dgi quadrant (recommended for clear imagery). Potential for adding via Rest Services.  
 
 ### UUCL Tree Inventory Aug 2022
-UUCL 7 Acres Committee provided csv containing tree information from Tree Inventory performed on March 25- 26 & April 8 2022. Data file contains the following attributes:
+UUCL 7 Acres Committee provided csv containing tree information from Tree Inventory performed on March 25- 26 & April 8 2022.   
+Data file contains the following attributes:  
 - Zone on property where tree exists
     1. Memorial Garden
     2. Woods
@@ -69,63 +68,63 @@ UUCL 7 Acres Committee provided csv containing tree information from Tree Invent
     - Monitor for Emerald Ash Borer (EAB)
 - Any additional Notes
 
-A kmz file was also provided with the points representing each tree and only it's corresponding ID # as 'Name' attribute.
-Upon adding csv file based on lat/long given, it aligns perfectly with the kmz file.
+A kmz file was also provided with the points representing each tree and only it's corresponding ID # as 'Name' attribute.  
+Upon adding csv file based on lat/long given, it aligns perfectly with the kmz file.  
 
 ## Part III. Proposed Visuals  
 App Map Layer with color coded system for maintenance and priority of action  
-    - SVG with tree in it colored accordingly (work in coolors for accessible colors)
-        - red = high priority  
-        - orange = medium priority  
-        - yellow = low priority  
-        - green = no reponse needed at this time  
-Could make into an interactive web map, allow pin pointing user location to help them identify where on the property they are with respect to the trees.  Would need to confirm accuracy of geolocator if it would fulfill the zoom level necessary to prove useful.  
+    - SVG with tree in it colored accordingly (work in coolors for accessible colors for all vision abilities)
+        - Black = high priority  
+        - Brown = medium priority  
+        - Light Green = low priority  
+        - Dark Green = no reponse needed at this time  
+Allow pin pointing user location to help them identify where on the property they are with respect to the trees.  Would need to confirm accuracy of geolocator if it would fulfill the zoom level necessary to prove useful.  
 
-## Part IV. Objectives and User Needs
-Maintenance User Needs:  
-    - Tree ID   
+## Part IV. Objectives and User Needs  
+Maintenance User Needs:   
+    - Tree ID    
     - Health   
     - Maintenance Recommendations  
     - Hazard/Safety  
     - Use on mobile device  
 Visitor User Needs:  
     - Tree ID   
-    - Identify Differences Between Trees using Common Name  
+    - Identify Differences Between Trees using Common Name   
     - Could later add photographs   
+    - Could also add links to info about the types of trees from external resources (US Forestry or Ky Div of Forestry)  
     - Use on mobile device   
 Objectives:   
-    - Will need to be able to click through variety of different layers with drop down menu    
+    - Will need to be able to click through variety of different layers with drop down menu (or clickable legend)      
     - Will need to be able to click on point and access popup modal of information    
     - Will need to geolocate oneself in reference to the tree   
     - May or may not need to turn off and on an info box or legend box if covers screen   
 
-## Part V. Data Processing, Storage, Next Steps
-Publish data from Google Sheet as CSV to web
-    - Allows for modification of a shared google sheet that auto updates map (only editable by those sheet is shared with)
-    - Any public entity looking at the code could download the data but not modify or edit
+## Part V. Data Processing, Storage, Next Steps  
+Publish data from Google Sheet as CSV to web  
+    - Allows for modification of a shared google sheet that auto updates map (only editable by those sheet is shared with)  
+    - Any public entity looking at the code could download the data but could not modify or edit  
 Add Googlesheet as delimited text layer to QGIS  
-Transform into geojson in js
-Load geojson for vanilla js transformation  
+Transform into geojson in js  
+Load geojson for vanilla js transformation    
 Access single geojson, assign 'health' of trees to separate layers  
     - Good  
     - Moderate  
     - Declining  
     - Dead  
-    - null (may need to return to this one to address by re-exporting from qgis with null equal to a 'null' text)  
+    - Unknown 
 Add legend layer control to turn on and off specific tree type or structure/health/hazard  
-Hosting on Github publicly, UUCL page publicly or behind log-in?  
-Confirm projecting correctly NAD 83 (3089)  
-Add DGI aerial? Add to data sources and citations (clipped or rest services?)  
-
-Add DGI tree layer or 3 d trees? Could also work in Felt?  
-Refactor code where styling is external from html.
+Hosting on Github publicly? UUCL page publicly or behind log-in?  
+Confirm projecting correctly NAD 83 (3089)  (to do)  
+Add DGI aerial? Add to data sources and citations (clipped or rest services?)   
+Add DGI tree layer or 3 d trees? Make a version in Felt?  
+Refactor code where styling is external from html.  
 
 ## Part VI. Data Stack and JS Libraries to Employ  
 html to host & leaflet js for interactivity:  
 Leaflet js to access osm data for basemap, or kyabove for aerial data.  
 Leaflet js to access [GeoJSON object](https://leafletjs.com/examples/geojson/)   
-Leaflet js to control [groups & layers](https://leafletjs.com/examples/layers-control/)  
-Leaflet js to access geolocation [leaflet on mobile example](https://leafletjs.com/examples/mobile/)  
+Leaflet js to control [groups & layers](https://leafletjs.com/examples/layers-control/)   
+Leaflet js to access geolocation [leaflet on mobile example](https://leafletjs.com/examples/mobile/)   
  
 ## Part VII. Layout  
 ### Mockup WireFrame 1  
@@ -148,6 +147,4 @@ Past files to reflect upon:
 ## References for readme  
 
 ## Final Map  
-Steps:  
-Pull CSS out and reference in doc  
 Publish json and files following 672-10 final readme.md  

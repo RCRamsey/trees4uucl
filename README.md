@@ -147,4 +147,5 @@ Past files to reflect upon:
 ## References for readme  
 
 ## Final Map  
-Publish json and files following 672-10 final readme.md  
+[Current Map](https://rcramsey.github.io/trees4uucl/)
+Publish json and files following 672-10 final readme.md  (settings - change view private to public; Settings - Pages tab - select branch - save; add a metadata file publish.json like in 672-10.)

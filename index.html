@@ -86,12 +86,12 @@
         // Add Legend Div with text and checked check box
         legendControl.onAdd = function (map) {
             var div = L.DomUtil.create('div', 'legend');
-            div.innerHTML = 
-                '<input type="checkbox" id="deadTrees" checked> <label for="deadTrees" style="color: black;">Dead Trees</label><br>' +
-                '<input type="checkbox" id="decliningTrees" checked> <label for="decliningTrees" style="color: #6A5C4D;">Declining Trees</label><br>' +
-                '<input type="checkbox" id="moderateTrees" checked> <label for="decliningTrees" style="color: #BEC185 ;">Moderate Trees</label><br>' +
-                '<input type="checkbox" id="goodTrees" checked> <label for="decliningTrees" style="#6D7D4F: ;">Good Trees</label><br>' +
-                '<input type="checkbox" id="nullTrees" checked> <label for="decliningTrees" style="color: pink;">Unkown Health Trees</label><br>';
+            div.innerHTML = '<H3>Tree Health<H3>'+
+                '<input type="checkbox" id="deadTrees" checked> <label for="deadTrees" style="color: black;">Dead</label><br>' +
+                '<input type="checkbox" id="decliningTrees" checked> <label for="decliningTrees" style="color: #6A5C4D;">Declining</label><br>' +
+                '<input type="checkbox" id="moderateTrees" checked> <label for="decliningTrees" style="color: #BEC185 ;">Moderate</label><br>' +
+                '<input type="checkbox" id="goodTrees" checked> <label for="decliningTrees" style="#6D7D4F: ;">Good</label><br>' +
+                '<input type="checkbox" id="nullTrees" checked> <label for="decliningTrees" style="color: pink;">Unkown</label><br>';
 
             return div;
         };

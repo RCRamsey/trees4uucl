@@ -83,18 +83,7 @@
             position: 'bottomright'
         });
 
-        // legendControl.onAdd = function (map) {
-        //     var div = L.DomUtil.create('div', 'legend');
-        //         div.innerHTML = 
-        //             '<input type="checkbox" id="deadTrees" checked> Dead Trees<br>' +
-        //             '<input type="checkbox" id="decliningTrees" checked> Declining Trees<br>' +
-        //             '<input type="checkbox" id="moderateTrees" checked> Moderate Trees<br>' +
-        //             '<input type="checkbox" id="goodTrees" checked> Good Trees<br>' +
-        //             '<input type="checkbox" id="nullTrees" checked> Null Trees';
-
-        //         return div;
-        // };
-
+        // Add Legend Div with text and checked check box
         legendControl.onAdd = function (map) {
             var div = L.DomUtil.create('div', 'legend');
             div.innerHTML = 
@@ -102,7 +91,7 @@
                 '<input type="checkbox" id="decliningTrees" checked> <label for="decliningTrees" style="color: #6A5C4D;">Declining Trees</label><br>' +
                 '<input type="checkbox" id="moderateTrees" checked> <label for="decliningTrees" style="color: #BEC185 ;">Moderate Trees</label><br>' +
                 '<input type="checkbox" id="goodTrees" checked> <label for="decliningTrees" style="#6D7D4F: ;">Good Trees</label><br>' +
-                '<input type="checkbox" id="nullTrees" checked> <label for="decliningTrees" style="color: blue;">Null Trees</label><br>';
+                '<input type="checkbox" id="nullTrees" checked> <label for="decliningTrees" style="color: pink;">Unkown Health Trees</label><br>';
 
             return div;
         };
@@ -177,10 +166,7 @@
             //     }
             //})//.addTo(map);
         
-            //add tree data layer using ajax
-            // var treeLayer = 
-            //$.getJSON("data/uuclTreeInventoryModified_20221218.geojson", function (data) {
-            //❤️ visualize dead trees assigning geoJson (dataLayer) layer for later reference 
+            //❤️ visualize dead trees assigning geoJson (geoJsonData of all trees google sheet published csv)
             var dataDeadTreeLayer = L.geoJson(geoJsonData, {
                 //convert point data in layer to circle markers on leaflet
                 pointToLayer: function (features, latlng) {
@@ -430,7 +416,7 @@
                     }).addTo(goodTreesLayer);
             });
 
-            // 💙 visualize null trees
+            // 💙 visualize unknown health trees
             var nullTreeLayer = $.when(geoJsonData).done(function (data) {
                     var dataNullTreeLayer = L.geoJson(geoJsonData, {
                             //convert point data in layer to circle markers on leaflet
@@ -440,7 +426,7 @@
                             filter: function (
                                 features
                             ) {
-                                if (features.geometry.type == "Point" && (features.properties.Health == 'Null')) 
+                                if (features.geometry.type == "Point" && (features.properties.Health == 'Unknown')) 
                                 {
                                 return features;
                                 }
@@ -485,12 +471,12 @@
                                 layer.on("mouseout", function (e) {
                                     //this.closePopup();
                                     e.target.setStyle({
-                                        fillColor: 'ECEBE9',
+                                        fillColor: 'pink',
                                         radius: 8,
                                     });
                                 });
                             }
-                    })//.addTo(nullTreesLayer);
+                    }).addTo(nullTreesLayer);
             });
 
             // treeLayer.addTo(map);

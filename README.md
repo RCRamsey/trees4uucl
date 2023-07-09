@@ -10,7 +10,7 @@ A repo for documenting the creation of a tree inventory on the property of UUCL 
     - [UUCL Tree Inventory Aug 2022](#uucl-tree-inventory-aug-2022)
 - [Part III. Proposed Visuals](#part-iii-proposed-visuals)
 - [Part IV. Objectives and User Needs](#part-iv-objectives-and-user-needs)
-- [Part V. Data Processing and Storage](#part-v-data-processing-and-storage)
+- [Part V. Data Processing Storage and Next Steps](#part-v-data-processing-storage-and-next-steps)
 - [Part VI. Data Stack and JS Libraries to Employ](#part-vi-data-stack-and-js-libraries-to-employ)
 - [Part VII. Layout](#part-vii-layout)
 - [Inspiration](#inspiration)
@@ -79,7 +79,7 @@ App Map Layer with color coded system for maintenance and priority of action
         - orange = medium priority  
         - yellow = low priority  
         - green = no reponse needed at this time  
-Could make into an interactive web map, allow pin pointing user location to help them identify where on the property they are with respect to the trees.  Would need to confirm accuracy of geolocator if it would fulfill the zoome level necessary to prove useful.  
+Could make into an interactive web map, allow pin pointing user location to help them identify where on the property they are with respect to the trees.  Would need to confirm accuracy of geolocator if it would fulfill the zoom level necessary to prove useful.  
 
 ## Part IV. Objectives and User Needs
 Maintenance User Needs:  
@@ -100,22 +100,24 @@ Objectives:
     - May or may not need to turn off and on an info box or legend box if covers screen   
 
 ## Part V. Data Processing, Storage, Next Steps
-Add csv as delimited text layer to QGIS  
-Export as geojson   
-Load geojson via ajax into html for vanilla js transformation  
+Publish data from Google Sheet as CSV to web
+    - Allows for modification of a shared google sheet that auto updates map (only editable by those sheet is shared with)
+    - Any public entity looking at the code could download the data but not modify or edit
+Add Googlesheet as delimited text layer to QGIS  
+Transform into geojson in js
+Load geojson for vanilla js transformation  
 Access single geojson, assign 'health' of trees to separate layers  
     - Good  
     - Moderate  
     - Declining  
     - Dead  
     - null (may need to return to this one to address by re-exporting from qgis with null equal to a 'null' text)  
-    - current sticking point is that they are all a single data file and have to select which points to represent (could work around this by returning to qgis and exporting 5 different files and reloading them separately but would like to try accessing in js first)  
 Add legend layer control to turn on and off specific tree type or structure/health/hazard  
 Hosting on Github publicly, UUCL page publicly or behind log-in?  
 Confirm projecting correctly NAD 83 (3089)  
 Add DGI aerial? Add to data sources and citations (clipped or rest services?)  
-Load from Google csv? or stay packaged on website (github/uucl page)  
-Add Ian's tree layer or 3 d trees? Could work in Felt?  
+
+Add DGI tree layer or 3 d trees? Could also work in Felt?  
 Refactor code where styling is external from html.
 
 ## Part VI. Data Stack and JS Libraries to Employ  

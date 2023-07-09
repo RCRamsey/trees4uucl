@@ -78,13 +78,46 @@
 
         var map = L.map('map', options);
 
+        // Create the legend control
+        var legendControl = L.control({
+            position: 'bottomright'
+        });
+
+        // legendControl.onAdd = function (map) {
+        //     var div = L.DomUtil.create('div', 'legend');
+        //         div.innerHTML = 
+        //             '<input type="checkbox" id="deadTrees" checked> Dead Trees<br>' +
+        //             '<input type="checkbox" id="decliningTrees" checked> Declining Trees<br>' +
+        //             '<input type="checkbox" id="moderateTrees" checked> Moderate Trees<br>' +
+        //             '<input type="checkbox" id="goodTrees" checked> Good Trees<br>' +
+        //             '<input type="checkbox" id="nullTrees" checked> Null Trees';
+
+        //         return div;
+        // };
+
+        legendControl.onAdd = function (map) {
+            var div = L.DomUtil.create('div', 'legend');
+            div.innerHTML = 
+                '<input type="checkbox" id="deadTrees" checked> <label for="deadTrees" style="color: black;">Dead Trees</label><br>' +
+                '<input type="checkbox" id="decliningTrees" checked> <label for="decliningTrees" style="color: #6A5C4D;">Declining Trees</label><br>' +
+                '<input type="checkbox" id="moderateTrees" checked> <label for="decliningTrees" style="color: #BEC185 ;">Moderate Trees</label><br>' +
+                '<input type="checkbox" id="goodTrees" checked> <label for="decliningTrees" style="#6D7D4F: ;">Good Trees</label><br>' +
+                '<input type="checkbox" id="nullTrees" checked> <label for="decliningTrees" style="color: blue;">Null Trees</label><br>';
+
+            return div;
+        };
+        // Add the legend control to the map
+        legendControl.addTo(map);
+        
         // add zoom control to top right window position
-        L.control.zoom({
+        var zoomControl = L.control.zoom({
             position: 'topright'
         }).addTo(map);
 
         // add geolocation control to top right window position (Leaflet can handle multiple top-right elements)
-        L.control.locate(locate_options).addTo(map);
+        // L.control.locate(locate_options).addTo(map);
+        var locateControl = L.control.locate(locate_options).addTo(map);
+
 
         // Get basemap URL from Leaflet Providers http://leaflet-extras.github.io/leaflet-providers/preview/
         var basemap_url = 'https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png'
@@ -98,6 +131,13 @@
         // request map tiles 
         var tiles = L.tileLayer(basemap_url, basemap_attributes);
         map.addLayer(tiles);
+
+        // Define the layer variables
+        var deadTreesLayer = L.layerGroup();  // Added variable definition
+        var decliningTreesLayer = L.layerGroup();  // Added variable definition
+        var moderateTreesLayer = L.layerGroup();  // Added variable definition
+        var goodTreesLayer = L.layerGroup();  // Added variable definition
+        var nullTreesLayer = L.layerGroup();  
 
         // Fetch data and parse csv as geojson
 
@@ -129,19 +169,19 @@
                 createLayers(geoJsonData)
             });
         });    
-
+  
         function createLayers(geoJsonData){
-            var treeLayer = L.geoJson(geoJsonData, {
-                pointToLayer: function (features, latlng) {
-                return L.circleMarker(latlng);
-                }
-            });
+            // var treeLayer = L.geoJson(geoJsonData, {
+            //     pointToLayer: function (features, latlng) {
+            //     return L.circleMarker(latlng);
+            //     }
+            //})//.addTo(map);
         
             //add tree data layer using ajax
             // var treeLayer = 
             //$.getJSON("data/uuclTreeInventoryModified_20221218.geojson", function (data) {
             //❤️ visualize dead trees assigning geoJson (dataLayer) layer for later reference 
-            var dataDeadTreeLayer = L.geoJson(treeLayer.toGeoJSON(), {
+            var dataDeadTreeLayer = L.geoJson(geoJsonData, {
                 //convert point data in layer to circle markers on leaflet
                 pointToLayer: function (features, latlng) {
                     return L.circleMarker(latlng);
@@ -194,14 +234,14 @@
                         });
                     });
                 }
-            }).addTo(map);
+            }).addTo(deadTreesLayer);
 
         
 
             // 🧡 visualize declining trees
-            var decliningTreeLayer = $.when(treeLayer).done(function (data) {
+            var decliningTreeLayer = $.when(geoJsonData).done(function (data) {
                     //$.getJSON("data/tl_2019_us_county_4326.geojson", function (data) {
-                    var dataDecliningTreeLayer = new L.geoJson(treeLayer.toGeoJSON(), {
+                    var dataDecliningTreeLayer = new L.geoJson(geoJsonData, {
                             //convert point data in layer to circle markers on leaflet
                             pointToLayer: function (features, latlng) {
                                 return L.circleMarker(latlng);
@@ -259,14 +299,14 @@
                                     });
                                 });
                             }
-                    }).addTo(map);
+                    }).addTo(decliningTreesLayer);
             });
 
                 
             //  💛 visualize moderate trees
-            var moderateTreeLayer = $.when(treeLayer).done(function (data) {
+            var moderateTreeLayer = $.when(geoJsonData).done(function (data) {
                     //$.getJSON("data/tl_2019_us_county_4326.geojson", function (data) {
-                    var dataModerateTreeLayer = new L.geoJson(treeLayer.toGeoJSON(), {
+                    var dataModerateTreeLayer = new L.geoJson(geoJsonData, {
                             //convert point data in layer to circle markers on leaflet
                             pointToLayer: function (features, latlng) {
                                 return L.circleMarker(latlng);
@@ -324,12 +364,12 @@
                                     });
                                 });
                             }
-                    }).addTo(map);
+                    }).addTo(moderateTreesLayer);
             });
 
             // 💚 visualize good trees
-            var goodTreeLayer = $.when(treeLayer).done(function (data) {
-                    var dataGoodTreeLayer = L.geoJson(treeLayer.toGeoJSON(), {
+            var goodTreeLayer = $.when(geoJsonData).done(function (data) {
+                    var dataGoodTreeLayer = L.geoJson(geoJsonData, {
                             //convert point data in layer to circle markers on leaflet
                             pointToLayer: function (features, latlng) {
                                 return L.circleMarker(latlng);
@@ -387,12 +427,12 @@
                                     });
                                 });
                             }
-                    }).addTo(map);
+                    }).addTo(goodTreesLayer);
             });
 
             // 💙 visualize null trees
-            var nullTreeLayer = $.when(treeLayer).done(function (data) {
-                    var dataNullTreeLayer = L.geoJson(treeLayer.toGeoJSON(), {
+            var nullTreeLayer = $.when(geoJsonData).done(function (data) {
+                    var dataNullTreeLayer = L.geoJson(geoJsonData, {
                             //convert point data in layer to circle markers on leaflet
                             pointToLayer: function (features, latlng) {
                                 return L.circleMarker(latlng);
@@ -400,7 +440,7 @@
                             filter: function (
                                 features
                             ) {
-                                if (features.geometry.type == "Point" && (features.properties.Health == null)) 
+                                if (features.geometry.type == "Point" && (features.properties.Health == 'Null')) 
                                 {
                                 return features;
                                 }
@@ -450,9 +490,63 @@
                                     });
                                 });
                             }
-                    }).addTo(map);
+                    })//.addTo(nullTreesLayer);
             });
+
+            // treeLayer.addTo(map);
+            // deadTreesLayer.addTo(map);
+            // decliningTreesLayer.addTo(map);
+            // moderateTreesLayer.addTo(map);
+            // goodTreesLayer.addTo(map);
+            // nullTreesLayer.addTo(map);    
         }
+
+        // Add event listeners to toggle the layers
+        document.getElementById('deadTrees').addEventListener('change', function () {
+            if (this.checked) {
+                map.addLayer(deadTreesLayer);
+            } else {
+                map.removeLayer(deadTreesLayer);
+            }
+        });
+
+        document.getElementById('decliningTrees').addEventListener('change', function () {
+            if (this.checked) {
+                map.addLayer(decliningTreesLayer);
+            } else {
+                map.removeLayer(decliningTreesLayer);
+            }
+        });
+
+        document.getElementById('moderateTrees').addEventListener('change', function () {
+            if (this.checked) {
+                map.addLayer(moderateTreesLayer);
+            } else {
+                map.removeLayer(moderateTreesLayer);
+            }
+        });
+
+        document.getElementById('goodTrees').addEventListener('change', function () {
+            if (this.checked) {
+                map.addLayer(goodTreesLayer);
+            } else {
+                map.removeLayer(goodTreesLayer);
+            }
+        });
+
+        document.getElementById('nullTrees').addEventListener('change', function () {
+            if (this.checked) {
+                map.addLayer(nullTreesLayer);
+            } else {
+                map.removeLayer(nullTreesLayer);
+            }
+        });
+
+        map.addLayer(deadTreesLayer);
+        map.addLayer(decliningTreesLayer);
+        map.addLayer(moderateTreesLayer);
+        map.addLayer(goodTreesLayer);
+        map.addLayer(nullTreesLayer);
 
         // //have jQuery wait until data loaded to add trail layer
         // var state = $.when(treeLayer).done(function () {
@@ -491,6 +585,8 @@
                 button.style.color = '#3d3d3d'
             }
         })
+
+        
     </script>
 
 </body>

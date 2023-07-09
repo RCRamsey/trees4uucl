@@ -45,8 +45,8 @@
             bottom: 20px;
             left: 15px;
             width: 280px;
-            padding: 0 15px;
-            height: 300px;
+            padding: 0 10px;
+            height: 200px;
             overflow: scroll;
             overflow-x: hidden;
 
@@ -87,6 +87,20 @@
 
         a:hover {
             text-decoration: underline;
+        }
+
+        /* Legend styling */
+        .legend {
+            bottom: 20px;
+            right: 15px;
+            padding: 0 5px;
+
+            /* Add styles to match Leaflet UI elements */
+            background: rgba(256, 256, 256, .9);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            z-index: 800;
         }
 
         /* Leaflet popup styles */
